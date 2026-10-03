@@ -741,8 +741,8 @@ html.bf-on, html.bf-on body { overflow: hidden; }
 :root {
   --abyss: #050706;
   --iron: #0c0f0e;
-  --plate: rgba(15, 18, 17, 0.93);
-  --plate-2: rgba(24, 28, 26, 0.95);
+  --plate: rgba(17, 20, 19, 0.86);
+  --plate-2: rgba(24, 28, 26, 0.9);
   --panel: var(--plate);
   --panel-2: var(--plate-2);
   --line: rgba(196, 186, 166, 0.12);
@@ -775,8 +775,7 @@ body { font-size: 17px; letter-spacing: .005em; background: var(--abyss); }
 #sea { background: #0b1715; }
 .vignette { background:
   radial-gradient(ellipse 85% 75% at 50% 42%, transparent 35%, rgba(2, 3, 3, .55) 75%, rgba(1, 1, 1, .92) 100%); }
-.hull { position: fixed; inset: 0; z-index: 1; pointer-events: none; transform: translateZ(0); }
-.vignette, .frame { transform: translateZ(0); }
+.hull { position: fixed; inset: 0; z-index: 1; pointer-events: none; }
 .hull::before { /* red night lighting spilling in from above and the corners */
   content: ""; position: absolute; inset: 0;
   background:
@@ -786,7 +785,7 @@ body { font-size: 17px; letter-spacing: .005em; background: var(--abyss); }
   animation: beacon 7s ease-in-out infinite; }
 @keyframes beacon { 0%, 100% { opacity: .75; } 50% { opacity: 1; } }
 .hull::after { /* grain and faint scanlines on the glass */
-  content: ""; position: absolute; inset: 0; opacity: .16;
+  content: ""; position: absolute; inset: 0; opacity: .5; mix-blend-mode: overlay;
   background:
     repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 3px),
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.35'/></svg>"); }
@@ -817,10 +816,7 @@ body { font-size: 17px; letter-spacing: .005em; background: var(--abyss); }
   border-radius: var(--r);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.045), inset 0 0 0 1px rgba(0,0,0,.6), 0 12px 32px rgba(0,0,0,.45);
 }
-/* No backdrop blur: over a moving canvas it is recomputed every frame, which phones can't afford. */
-.panel, .pop-card, .scrim { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
-.pop-card { background: rgba(12,14,13,.95); border-radius: var(--r); }
-.panel { background: var(--plate); border-color: var(--line); }
+.panel { background: var(--plate); border-color: var(--line); backdrop-filter: blur(6px) saturate(.7); -webkit-backdrop-filter: blur(6px) saturate(.7); }
 .label { font: 600 13px/1.3 var(--body); letter-spacing: .06em; text-transform: none; color: var(--ink-dim); }
 .section > .label { display: flex; align-items: center; gap: 10px; }
 .section > .label::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--line-strong), transparent); }
@@ -894,7 +890,7 @@ body { font-size: 17px; letter-spacing: .005em; background: var(--abyss); }
 .reveal { border-top-color: var(--line-strong); }
 
 /* ---- overlays ---- */
-.scrim { background: rgba(2,2,2,.8) !important; }
+.scrim { background: rgba(2,2,2,.72) !important; backdrop-filter: blur(3px) grayscale(.4); -webkit-backdrop-filter: blur(3px) grayscale(.4); }
 .modal { background: #101312 !important; border: 1px solid var(--line-strong) !important; }
 .modal h2 { font-family: var(--display); letter-spacing: .1em; }
 .banner { background: rgba(8,9,8,.92); border-color: rgba(179,38,30,.45); }
@@ -5230,17 +5226,14 @@ F.Q("word", 1, "Name a type of coat or jacket", "Mackintosh=Mac",
   });
   const cv = document.getElementById("sea");
   const ctx = cv.getContext("2d");
-  let W = 0, H = 0, DPR = 1, parts = [], lastPaint = 0;
-  // Phones and tablets: fewer pixels, fewer particles, 30 fps. The water is soft enough not to need more.
-  const LOW = !!(window.matchMedia && window.matchMedia("(pointer: coarse)").matches);
-  O.low = LOW;
+  let W = 0, H = 0, DPR = 1, parts = [];
 
   function resize() {
-    DPR = Math.min(LOW ? 1 : 1.5, window.devicePixelRatio || 1);
+    DPR = Math.min(2, window.devicePixelRatio || 1);
     W = cv.clientWidth || window.innerWidth; H = cv.clientHeight || window.innerHeight;
     cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR);
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    const n = Math.round(LOW ? Math.min(70, (W * H) / 14000) : Math.min(140, (W * H) / 9000));
+    const n = Math.round(Math.min(160, (W * H) / 9000));
     parts = Array.from({ length: n }, () => ({
       x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.6 + 0.4,
       vy: Math.random() * 0.25 + 0.08, sway: Math.random() * Math.PI * 2, glow: Math.random() < 0.18,
@@ -5277,14 +5270,6 @@ F.Q("word", 1, "Name a type of coat or jacket", "Mackintosh=Mac",
       O.onDepth && O.onDepth(O.shown);
     }
     O.rush *= 0.965;
-    // Nothing to paint while a full-screen scene (shark fight, descent) covers the water,
-    // and on touch devices paint at 30 fps.
-    const covered = document.documentElement.classList.contains("bf-on") || !!document.querySelector(".dive:not(.out)");
-    if (covered || (LOW && now - lastPaint < 31 && O.shown === O.target)) {
-      O.onDepth && O.shown !== O.target && O.onDepth(O.shown);
-      requestAnimationFrame(draw); return;
-    }
-    lastPaint = now;
     const d = O.shown;
     const top = colorAt(Math.max(0, d * 0.7 - 40)), bot = colorAt(d + 250 + d * 0.4);
     const g = ctx.createLinearGradient(0, 0, 0, H);
@@ -5325,7 +5310,7 @@ F.Q("word", 1, "Name a type of coat or jacket", "Mackintosh=Mac",
         k.x += k.v; k.ph += 0.03;
         const a = 0.32 * Math.min(1, (d - 120) / 400);
         ctx.save(); ctx.translate(k.x, k.y + Math.sin(k.ph) * 6); ctx.scale(k.dir, 1);
-        if (!LOW && "filter" in ctx) ctx.filter = "blur(" + Math.round(k.s / 40 + 3) + "px)";
+        if ("filter" in ctx) ctx.filter = "blur(" + Math.round(k.s / 40 + 3) + "px)";
         ctx.fillStyle = `rgba(0,3,4,${a})`;
         const s = k.s, tw = Math.sin(k.ph * 2) * s * 0.05;
         ctx.beginPath();
@@ -5370,10 +5355,9 @@ F.Q("word", 1, "Name a type of coat or jacket", "Mackintosh=Mac",
       const x = p.x + Math.sin(p.sway) * 6;
       if (p.glow && bio > 0) {
         const a = bio * (0.35 + 0.65 * Math.max(0, Math.sin(p.tw)));
-        ctx.fillStyle = `rgba(${p.hue[0]},${p.hue[1]},${p.hue[2]},${a * 0.18})`;
-        ctx.beginPath(); ctx.arc(x, p.y, p.r * 3 + 3, 0, 7); ctx.fill();
         ctx.fillStyle = `rgba(${p.hue[0]},${p.hue[1]},${p.hue[2]},${a * 0.9})`;
-        ctx.beginPath(); ctx.arc(x, p.y, p.r + 0.6, 0, 7); ctx.fill();
+        ctx.shadowColor = `rgba(${p.hue[0]},${p.hue[1]},${p.hue[2]},${a})`; ctx.shadowBlur = 8;
+        ctx.beginPath(); ctx.arc(x, p.y, p.r + 0.6, 0, 7); ctx.fill(); ctx.shadowBlur = 0;
       } else {
         ctx.fillStyle = `rgba(205,215,200,${snowA * (0.4 + p.r / 3)})`;
         if (O.rush > 0.05) { ctx.fillRect(x, p.y, p.r * 0.8, p.r + O.rush * 14); }
@@ -7353,7 +7337,7 @@ Reply with only JSON like {"valid": true, "tier": 4, "name": "Correct Spelling",
   }
   function resize() {
     if (!cv) return;
-    DPR = Math.min(window.OCEAN && window.OCEAN.low ? 1.25 : 2, window.devicePixelRatio || 1);
+    DPR = Math.min(2, window.devicePixelRatio || 1);
     W = window.innerWidth; H = window.innerHeight;
     cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR);
     cv.style.width = W + "px"; cv.style.height = H + "px";
