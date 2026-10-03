@@ -933,15 +933,6 @@ body { font-size: 17px; letter-spacing: .005em; background: var(--abyss); }
   background: radial-gradient(ellipse 90% 80% at 55% 50%, transparent 40%, rgba(0,0,0,.78) 100%), radial-gradient(60% 30% at 50% -5%, rgba(179,38,30,.25), transparent 70%); }
 .bf-quit { border-radius: 4px !important; }
 
-/* phones and tablets: no rubber-band past the ends, and the full-screen layers always reach the
-   bottom of the screen, even while the browser's toolbars slide in and out */
-html { background: #050706; overscroll-behavior: none; }
-body { overscroll-behavior: none; }
-#sea, .vignette, .hull { bottom: auto; height: 100vh; height: 100lvh; }
-.dive, .bf, .intro { bottom: auto; height: 100vh; height: 100dvh; }
-html.bf-on, html.bf-on body { height: 100%; overscroll-behavior: none; touch-action: none; }
-.bf { touch-action: manipulation; }
-
 /* ================= Opening sequence ================= */
 .intro { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; overflow: hidden; color: var(--ink);
   font-family: var(--body); cursor: default; }
@@ -5433,17 +5424,6 @@ F.Q("word", 1, "Name a type of coat or jacket", "Mackintosh=Mac",
   }
 
   window.addEventListener("resize", resize);
-  // iPhone/iPad: after the on-screen keyboard closes the page can stay shifted, leaving a gap at the
-  // bottom. Nudge it back into place.
-  document.addEventListener("focusout", (e) => {
-    if (!e.target || !/^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
-    setTimeout(() => {
-      const a = document.activeElement;
-      if (a && /^(INPUT|TEXTAREA)$/.test(a.tagName)) return;
-      if (document.documentElement.classList.contains("bf-on")) window.scrollTo(0, 0);
-      else window.scrollTo(window.scrollX, window.scrollY);
-    }, 80);
-  });
   O.start = function () { resize(); requestAnimationFrame(draw); };
   O.colorAt = colorAt;
 
@@ -7365,21 +7345,18 @@ Reply with only JSON like {"valid": true, "tier": 4, "name": "Correct Spelling",
     $("#popForm").onsubmit = (e) => { e.preventDefault(); const i = $("#popAns"); const v = i.value; i.value = ""; answer(v); if (B && B.pop) i.focus({ preventScroll: true }); };
     paintHearts(); paintHp();
     window.addEventListener("resize", resize);
-    if (window.visualViewport) window.visualViewport.addEventListener("resize", resize);
   }
   function removeOverlay() {
     const el = $("#bf"); if (el) el.remove();
     document.documentElement.classList.remove("bf-on");
     window.removeEventListener("resize", resize);
-    if (window.visualViewport) window.visualViewport.removeEventListener("resize", resize);
   }
   function resize() {
     if (!cv) return;
     DPR = Math.min(window.OCEAN && window.OCEAN.low ? 1.25 : 2, window.devicePixelRatio || 1);
-    // size to the overlay itself (it follows the visible screen as phone toolbars come and go)
-    cv.style.width = "100%"; cv.style.height = "100%";
-    W = cv.clientWidth || window.innerWidth; H = cv.clientHeight || window.innerHeight;
+    W = window.innerWidth; H = window.innerHeight;
     cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR);
+    cv.style.width = W + "px"; cv.style.height = H + "px";
   }
   function leave() {
     cancelAnimationFrame(raf);
