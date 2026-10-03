@@ -2,7 +2,7 @@
 <title>Fathom</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Big+Shoulders+Stencil+Display:wght@600;800;900&family=Big+Shoulders+Display:wght@700;900&family=Martian+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Big+Shoulders+Display:wght@700;900&family=Martian+Mono:wght@400;600&display=swap">
 <style>
 /* Layout: one narrow dive column over a full-bleed ocean canvas that darkens with depth; a sounding gauge rides the left edge on wide screens. Deliberately single-theme (the ocean is always dark). */
 :root {
@@ -732,267 +732,10 @@ html.bf-on, html.bf-on body { overflow: hidden; }
 .bf-pop.inky .pop-card { border-color: #3d4a55; }
 .pop-card .feedback:empty { display: none; }
 .bf .prompt .murk { background: none; border-radius: 0; transition: color .3s, text-shadow .3s; }
-
-/* ================= Submarine theme =================
-   The screen is the control room of a deep-sea submersible running on night lighting: the sea is
-   seen through a riveted viewport, panels are matte steel instrument plates, readouts are backlit
-   amber, and red cabin light bleeds in from the edges. One bold thing (the viewport); the rest stays
-   quiet and mechanical. */
-:root {
-  --abyss: #050706;
-  --iron: #0c0f0e;
-  --plate: rgba(17, 20, 19, 0.86);
-  --plate-2: rgba(24, 28, 26, 0.9);
-  --panel: var(--plate);
-  --panel-2: var(--plate-2);
-  --line: rgba(196, 186, 166, 0.12);
-  --line-strong: rgba(196, 186, 166, 0.24);
-  --ink: #e2dbcb;
-  --ink-dim: #a39b8b;
-  --ink-faint: #6d675d;
-  --lure: #e3a447;
-  --lure-ink: #1a1004;
-  --coral: #d0574a;
-  --kelp: #7fb59a;
-  --red: #b3261e;
-  --sonar: #6fb3a8;
-  --t0: #9aa3a0;
-  --t1: #d26a55;
-  --t2: #5fb3a6;
-  --t3: #9d8bd8;
-  --t4: #e3a447;
-  --t5: #f1e7d0;
-  --display: "Big Shoulders Stencil Display", "Big Shoulders Display", "Arial Narrow", sans-serif;
-  --display-solid: "Big Shoulders Display", "Arial Narrow", sans-serif;
-  --body: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
-  --r: 6px;
-}
-body { font-size: 17px; letter-spacing: .005em; background: var(--abyss); }
-::selection { background: rgba(227, 164, 71, .35); }
-:focus-visible { outline-color: var(--lure); border-radius: 3px; }
-
-/* ---- the hull: viewport frame, red cabin light, grain, flicker ---- */
-#sea { background: #0b1715; }
-.vignette { background:
-  radial-gradient(ellipse 85% 75% at 50% 42%, transparent 35%, rgba(2, 3, 3, .55) 75%, rgba(1, 1, 1, .92) 100%); }
-.hull { position: fixed; inset: 0; z-index: 1; pointer-events: none; }
-.hull::before { /* red night lighting spilling in from above and the corners */
-  content: ""; position: absolute; inset: 0;
-  background:
-    radial-gradient(60% 34% at 50% -6%, rgba(179, 38, 30, .30), transparent 70%),
-    radial-gradient(40% 40% at 0% 100%, rgba(120, 18, 12, .28), transparent 70%),
-    radial-gradient(40% 40% at 100% 100%, rgba(120, 18, 12, .22), transparent 70%);
-  animation: beacon 7s ease-in-out infinite; }
-@keyframes beacon { 0%, 100% { opacity: .75; } 50% { opacity: 1; } }
-.hull::after { /* grain and faint scanlines on the glass */
-  content: ""; position: absolute; inset: 0; opacity: .5; mix-blend-mode: overlay;
-  background:
-    repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 3px),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.35'/></svg>"); }
-.frame { position: fixed; inset: 0; z-index: 4; pointer-events: none; display: none; }
-@media (min-width: 900px) {
-  .frame { display: block; border: 14px solid #0b0d0c; border-radius: 26px;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 0 0 3px #020302, inset 0 0 60px 10px rgba(0,0,0,.75), 0 0 0 40px #0b0d0c; }
-  .frame i { position: absolute; width: 10px; height: 10px; border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, #4a4d48, #1b1d1b 60%, #050605); box-shadow: 0 1px 0 rgba(255,255,255,.06); }
-  .frame i:nth-child(1) { left: -12px; top: 18%; } .frame i:nth-child(2) { left: -12px; top: 50%; } .frame i:nth-child(3) { left: -12px; top: 82%; }
-  .frame i:nth-child(4) { right: -12px; top: 18%; } .frame i:nth-child(5) { right: -12px; top: 50%; } .frame i:nth-child(6) { right: -12px; top: 82%; }
-  .frame i:nth-child(7) { top: -12px; left: 30%; } .frame i:nth-child(8) { top: -12px; left: 70%; }
-  .frame i:nth-child(9) { bottom: -12px; left: 30%; } .frame i:nth-child(10) { bottom: -12px; left: 70%; }
-  .gauge { left: 34px; }
-}
-/* the cabin lights brown out now and then */
-.flicker .app, .flicker .hull::before { animation: brownout .9s steps(1) 1; }
-@keyframes brownout { 0% { opacity: 1; } 8% { opacity: .35; } 14% { opacity: .9; } 22% { opacity: .2; } 30% { opacity: 1; } 62% { opacity: .7; } 68% { opacity: 1; } }
-
-/* ---- shell ---- */
-.app { padding-top: 14px; }
-.brand { font: 800 21px/1 var(--display); letter-spacing: .22em; color: var(--ink); }
-.brand svg { color: var(--red); filter: drop-shadow(0 0 5px rgba(179,38,30,.8)); }
-.iconbtn { border-radius: 4px; color: var(--ink-faint); }
-.iconbtn:hover { background: rgba(227,164,71,.07); color: var(--lure); border-color: rgba(227,164,71,.25); }
-
-.panel, .mode, .pack, .legend .tier, .mp-set, .slot, .sharkcard, .daily, .stat, .pod, .mp-row, .gc, .find, .pop-card, .modal, .banner {
-  border-radius: var(--r);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.045), inset 0 0 0 1px rgba(0,0,0,.6), 0 12px 32px rgba(0,0,0,.45);
-}
-.panel { background: var(--plate); border-color: var(--line); backdrop-filter: blur(6px) saturate(.7); -webkit-backdrop-filter: blur(6px) saturate(.7); }
-.label { font: 600 13px/1.3 var(--body); letter-spacing: .06em; text-transform: none; color: var(--ink-dim); }
-.section > .label { display: flex; align-items: center; gap: 10px; }
-.section > .label::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--line-strong), transparent); }
-
-.btn { border-radius: 4px; background: var(--plate-2); border-color: var(--line-strong); font-weight: 600; letter-spacing: .02em; }
-.btn:hover { border-color: rgba(227,164,71,.45); color: var(--ink); }
-.btn.primary { background: linear-gradient(180deg, #e9ae55, #c98a2f); color: var(--lure-ink); border-color: #f0bd6c;
-  font: 800 22px/1 var(--display); letter-spacing: .14em;
-  box-shadow: 0 0 0 1px rgba(0,0,0,.7), 0 0 24px rgba(227,164,71,.28), inset 0 1px 0 rgba(255,240,210,.5); text-shadow: 0 1px 0 rgba(255,230,190,.35); }
-.btn.primary:hover { background: linear-gradient(180deg, #f2bb64, #d39437); }
-.btn.ghost { background: transparent; }
-.chip { border-radius: 3px; font: 600 13px/1 var(--body); letter-spacing: .03em; }
-.chip[aria-pressed="true"] { background: var(--lure); border-color: var(--lure); box-shadow: 0 0 14px rgba(227,164,71,.3); }
-
-/* ---- home ---- */
-.hero { padding-block: 26px 6px; }
-.hero .line { display: none; }
-.wordmark { font: 900 clamp(4.4rem, 21vw, 8.6rem)/.8 var(--display); letter-spacing: .08em; color: var(--ink); white-space: nowrap; }
-.wordmark span { animation: none; background: none; -webkit-text-fill-color: currentColor; color: #d8cfbd;
-  text-shadow: 0 0 1px rgba(255,255,255,.2), 0 2px 0 #000, 0 0 28px rgba(179,38,30,.35); }
-.wordmark span:nth-child(5) { animation: dying 9s steps(1) infinite; }
-@keyframes dying { 0%, 91%, 100% { opacity: 1; } 92% { opacity: .25; } 93% { opacity: 1; } 95% { opacity: .4; } 96% { opacity: 1; } }
-.tagline { color: var(--ink-dim); font-size: 1.15rem; max-width: 38ch; }
-.tagline b { color: var(--ink); font-weight: 600; }
-
-.mode, .pack { position: relative; background: var(--plate); border-color: var(--line); }
-.mode .name { font: 800 21px/1.1 var(--display); letter-spacing: .1em; }
-.mode .name svg, .pack svg { color: var(--ink-faint); }
-.mode:hover, .pack:hover { border-color: rgba(227,164,71,.3); }
-.mode[aria-pressed="true"], .pack[aria-pressed="true"] { border-color: rgba(227,164,71,.6); background: linear-gradient(180deg, rgba(227,164,71,.10), rgba(17,20,19,.9) 70%); }
-.mode[aria-pressed="true"] .name svg, .pack[aria-pressed="true"] svg { color: var(--lure); filter: drop-shadow(0 0 5px rgba(227,164,71,.6)); }
-/* indicator lamp on every selectable plate */
-.mode::after, .pack::after { content: ""; position: absolute; top: 9px; right: 9px; width: 6px; height: 6px; border-radius: 50%;
-  background: #2a2a26; box-shadow: inset 0 1px 1px rgba(0,0,0,.8); }
-.mode[aria-pressed="true"]::after, .pack[aria-pressed="true"]::after { background: var(--lure); box-shadow: 0 0 8px var(--lure), 0 0 2px #fff4dc; }
-.pack .t b { font-weight: 600; font-size: 1rem; }
-.pack .t small, .meta, .lenmeta { font-family: var(--mono); }
-.go .btn.primary { min-height: 62px; font-size: 26px; }
-.legend .tier { background: var(--plate); }
-.legend .tier b { font-weight: 600; }
-
-/* ---- readouts ---- */
-.depth .num { font: 900 clamp(3.2rem, 15vw, 5rem)/.85 var(--display-solid); color: var(--lure);
-  text-shadow: 0 0 18px rgba(227,164,71,.35), 0 0 2px rgba(255,230,190,.4); }
-.depth .num small { color: var(--ink-faint); }
-.depth .zone { color: var(--ink-dim); font-family: var(--body); font-size: 13px; font-weight: 600; letter-spacing: .08em; }
-.stepper input, .stepval, .room-code, .pod > span:not(.place), .cab-head b { font-family: var(--display-solid); }
-.stepper input { border-radius: 3px; background: #050706; color: var(--lure); box-shadow: inset 0 0 12px rgba(0,0,0,.9); }
-.room-code { color: var(--lure); text-shadow: 0 0 22px rgba(227,164,71,.35); }
-.timer, .pop-timer, .bitebar, .hpbar, .gapbar, .srow .track, .cab-bar { border-radius: 2px; background: rgba(0,0,0,.55); box-shadow: inset 0 0 0 1px rgba(255,255,255,.05); }
-.timer i, .srow .fill, .cab-bar i { border-radius: 1px; }
-.timer i { background: linear-gradient(90deg, #4f8a74, var(--kelp)); }
-.timer.low i { background: linear-gradient(90deg, #b07a2c, var(--lure)); }
-.timer.crit i { background: linear-gradient(90deg, #7e1812, var(--coral)); }
-.pip { border-radius: 2px; }
-.segs i { border-radius: 1px; background: rgba(196,186,166,.1); }
-.segs i.miss { background: rgba(196,186,166,.25); }
-.streak, .roomchip, .pchip, .multi, .tried span { border-radius: 3px; }
-.streak { background: rgba(0,0,0,.5); font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .06em; }
-.tank { color: var(--kelp); }
-
-/* ---- prompt card ---- */
-.card { gap: 16px; }
-.prompt { font: 800 clamp(2rem, 8.5vw, 3.1rem)/1.02 var(--display-solid); letter-spacing: .015em; color: var(--ink); }
-.answer input, .field input { border-radius: 4px; background: rgba(3,5,4,.85); border-color: var(--line-strong); color: var(--ink);
-  box-shadow: inset 0 2px 10px rgba(0,0,0,.8); caret-color: var(--lure); font-family: var(--body); }
-.answer input:focus, .field input:focus { border-color: rgba(227,164,71,.6); box-shadow: inset 0 2px 10px rgba(0,0,0,.8), 0 0 0 3px rgba(227,164,71,.12); }
-.feedback .spin, .mp-wait .spin { border-top-color: var(--lure); }
-.tried span { border-color: rgba(208,87,74,.4); color: #e09a8f; }
-.result .tiername { font-family: var(--display); letter-spacing: .1em; }
-.reveal { border-top-color: var(--line-strong); }
-
-/* ---- overlays ---- */
-.scrim { background: rgba(2,2,2,.72) !important; backdrop-filter: blur(3px) grayscale(.4); -webkit-backdrop-filter: blur(3px) grayscale(.4); }
-.modal { background: #101312 !important; border: 1px solid var(--line-strong) !important; }
-.modal h2 { font-family: var(--display); letter-spacing: .1em; }
-.banner { background: rgba(8,9,8,.92); border-color: rgba(179,38,30,.45); }
-.banner .label { color: var(--coral); }
-.banner h3 { font-family: var(--display); letter-spacing: .12em; }
-.toast { border-radius: 4px; background: var(--lure); color: var(--lure-ink); }
-.switch { border-radius: 3px !important; }
-.switch::after { border-radius: 2px !important; }
-.end-hero .big { font-family: var(--display-solid) !important; color: var(--lure); text-shadow: 0 0 24px rgba(227,164,71,.3); }
-
-/* gauge becomes a sonar depth strip */
-.gauge .rail { background: linear-gradient(rgba(111,179,168,.4), rgba(111,179,168,.05)); }
-.gauge .tick { font-family: var(--body); font-size: 11px; color: var(--ink-faint); }
-.gauge .tick.land { color: rgba(208,87,74,.7); }
-.gauge .tick.land::before { background: rgba(208,87,74,.6); }
-.gauge .diver { background: radial-gradient(circle, var(--sonar) 0 3px, rgba(111,179,168,.25) 4px, transparent 11px); }
-.gauge .diver::after { border-color: rgba(111,179,168,.5); }
-
-#sharkEntry .sharkcard { background: linear-gradient(120deg, rgba(179,38,30,.10), var(--plate) 55%); }
-#sharkEntry .sharkcard:hover:not(:disabled) { border-color: rgba(208,87,74,.5); }
-
-/* descent overlay: same murky water, red-lit like the cabin */
-.dive, .dive-world { background: #020506; }
-.dive-sky { background: radial-gradient(90% 60% at 60% 100%, rgba(140,190,170,.18), transparent 70%), linear-gradient(180deg, #050606 0%, #0d1b1b 55%, #1d4545 100%) !important; }
-.waterline { background: rgba(200,220,205,.6); box-shadow: 0 0 14px rgba(180,210,190,.35); }
-.stratum { border-top-color: rgba(200,190,170,.14); }
-.dive-hud { background: linear-gradient(180deg, rgba(3,4,4,.92), rgba(3,4,4,0)) !important; }
-.dive-read { font-family: var(--display-solid); text-shadow: 0 0 20px rgba(227,164,71,.35); }
-.dive-skip { font-family: var(--body); font-size: 12px; letter-spacing: .08em; color: rgba(226,219,203,.45); }
-.dive::after { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 4;
-  background: radial-gradient(ellipse 90% 80% at 50% 45%, transparent 45%, rgba(0,0,0,.75) 100%), radial-gradient(60% 30% at 50% -5%, rgba(179,38,30,.22), transparent 70%); }
-
-/* shark fight: same murk, red-lit edges */
-.bf { background: #020405; }
-.bf::after { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
-  background: radial-gradient(ellipse 90% 80% at 55% 50%, transparent 40%, rgba(0,0,0,.78) 100%), radial-gradient(60% 30% at 50% -5%, rgba(179,38,30,.25), transparent 70%); }
-.bf-quit { border-radius: 4px !important; }
-
-/* ================= Opening sequence ================= */
-.intro { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; overflow: hidden; color: var(--ink);
-  font-family: var(--body); cursor: default; }
-.intro .blk { position: absolute; inset: 0; z-index: 3; background: #000; transition: opacity 1.4s ease; }
-.intro .glow { position: absolute; inset: 0; z-index: 2; opacity: 0; pointer-events: none; transition: opacity 1.2s;
-  background: radial-gradient(70% 50% at 50% 0%, rgba(179,38,30,.45), transparent 70%), radial-gradient(60% 50% at 50% 110%, rgba(110,16,10,.5), transparent 70%); }
-.intro .shut { position: absolute; left: 0; right: 0; height: 51%; background:
-    radial-gradient(circle at 50% 50%, #5e625b 0 2.5px, #0a0b0a 3.5px, transparent 4.5px) 0 calc(100% - 6px) / 64px 24px repeat-x,
-    repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 46px),
-    repeating-linear-gradient(90deg, rgba(0,0,0,.35) 0 2px, transparent 2px 160px),
-    linear-gradient(180deg, #2b2f2c, #191c1a 60%, #121413); z-index: 1; transition: transform 1.6s cubic-bezier(.7,0,.2,1); }
-.intro .shut.top { top: 0; border-bottom: 2px solid #000; box-shadow: 0 1px 0 rgba(255,255,255,.06); }
-.intro .shut.bot { bottom: 0; background-position: 0 6px, 0 0, 0 0, 0 0; border-top: 2px solid #000; box-shadow: 0 -1px 0 rgba(255,255,255,.06); }
-.intro .shut::after { content: ""; position: absolute; left: 50%; width: 120px; margin-left: -60px; height: 8px; background: #050605; border-radius: 2px; box-shadow: inset 0 1px 2px #000, 0 1px 0 rgba(255,255,255,.05); }
-.intro .shut.top::after { bottom: 22px; } .intro .shut.bot::after { top: 22px; }
-.intro.open .shut.top { transform: translateY(-101%); }
-.intro.open .shut.bot { transform: translateY(101%); }
-.intro .boot { position: absolute; z-index: 4; left: max(20px, 6vw); top: max(24px, 8vh); display: grid; gap: 7px;
-  font: 400 clamp(11px, 2.8vw, 13px)/1.4 var(--mono); color: rgba(227,164,71,.85); text-shadow: 0 0 8px rgba(227,164,71,.4); transition: opacity .8s; }
-.intro .boot div { white-space: pre; overflow: hidden; }
-.intro .boot .ok { color: var(--kelp); text-shadow: 0 0 8px rgba(127,181,154,.5); }
-.intro .boot .warn { color: var(--coral); text-shadow: 0 0 8px rgba(208,87,74,.55); }
-.intro .lamp { position: absolute; z-index: 4; right: max(20px, 6vw); top: max(26px, 8vh); width: 9px; height: 9px; border-radius: 50%; background: #3a0d0a; }
-.intro .lamp.on { background: #ff3b2b; box-shadow: 0 0 12px 3px rgba(255,59,43,.7); animation: lampblink 1.1s steps(1) infinite; }
-@keyframes lampblink { 50% { background: #3a0d0a; box-shadow: none; } }
-.intro .readout { position: absolute; z-index: 4; right: max(20px, 6vw); bottom: max(24px, 7vh); text-align: right; font: 900 clamp(34px, 8vw, 56px)/1 var(--display-solid);
-  color: var(--lure); text-shadow: 0 0 18px rgba(227,164,71,.4); font-variant-numeric: tabular-nums; opacity: 0; transition: opacity .6s; }
-.intro .readout small { display: block; font: 600 12px/1.4 var(--body); letter-spacing: .14em; color: var(--ink-dim); text-shadow: none; }
-.intro .title { position: relative; z-index: 4; display: grid; justify-items: center; gap: 18px; text-align: center; padding: 20px; }
-.intro .title h1 { margin: 0; font: 900 clamp(4.6rem, 24vw, 11rem)/.8 var(--display); letter-spacing: .14em; color: #ddd3c0; margin-right: -.14em;
-  text-shadow: 0 2px 0 #000, 0 0 40px rgba(179,38,30,.55); }
-.intro .title h1 span { display: inline-block; opacity: 0; transform: translateY(8px); filter: blur(6px); transition: opacity .9s, transform .9s cubic-bezier(.2,.8,.2,1), filter .9s; }
-.intro .title h1 span.in { opacity: 1; transform: none; filter: none; }
-.intro .title p { margin: 0; max-width: 32ch; font-size: clamp(1rem, 3.6vw, 1.2rem); color: var(--ink-dim); opacity: 0; transition: opacity 1s; }
-.intro .title .btn.primary { min-width: 240px; min-height: 58px; opacity: 0; transform: translateY(6px); transition: opacity .8s, transform .8s; pointer-events: none; }
-.intro.ready .title p, .intro.ready .title .btn.primary { opacity: 1; transform: none; pointer-events: auto; }
-.intro .ring { position: absolute; z-index: 2; left: 50%; top: 50%; width: 40px; height: 40px; margin: -20px; border-radius: 50%; border: 1.5px solid rgba(111,179,168,.7);
-  opacity: 0; pointer-events: none; }
-.intro .ring.go { animation: sonarring 2.6s cubic-bezier(.1,.6,.3,1) forwards; }
-@keyframes sonarring { 0% { opacity: .9; transform: scale(.2); } 100% { opacity: 0; transform: scale(28); } }
-.intro .skip { position: absolute; z-index: 6; right: max(16px, 4vw); bottom: max(16px, 3vh); background: transparent; border: 1px solid var(--line-strong); color: var(--ink-dim);
-  border-radius: 3px; padding: 8px 14px; font: 600 13px/1 var(--body); letter-spacing: .06em; }
-.intro .skip:hover { color: var(--ink); border-color: var(--ink-dim); }
-.intro.ready .skip { display: none; }
-.intro .flash { position: absolute; inset: 0; z-index: 5; background: #fff4e0; opacity: 0; pointer-events: none; }
-.intro .flash.go { animation: introflash .7s steps(1) 1; }
-@keyframes introflash { 0% { opacity: .0; } 10% { opacity: .22; } 20% { opacity: 0; } 35% { opacity: .12; } 45% { opacity: 0; } }
-.intro.leave { animation: introleave 1.1s ease forwards; }
-@keyframes introleave { to { opacity: 0; visibility: hidden; } }
-.intro.leave .title { transition: transform 1.1s cubic-bezier(.6,0,.4,1), opacity .8s; transform: scale(1.08) translateY(-20px); opacity: 0; }
-@media (prefers-reduced-motion: reduce) {
-  .intro .shut, .intro .title h1 span, .intro .title p, .intro .title .btn.primary { transition: none !important; }
-  .hull::before, .wordmark span:nth-child(5) { animation: none; }
-}
-
-body.intro-on .app, body.intro-on .gauge, body.intro-on #layer { visibility: hidden; }
-.intro.lit .glow { opacity: 1; }
-.intro.lit .blk { opacity: 0; }
 </style>
 </head><body>
 <canvas id="sea" aria-hidden="true"></canvas>
 <div class="vignette" aria-hidden="true"></div>
-<div class="hull" aria-hidden="true"></div>
-<div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 <div class="gauge" id="gauge" aria-hidden="true"><div class="rail"></div><div class="diver" id="diver"></div></div>
 
 <main class="app" id="app">
@@ -5202,9 +4945,9 @@ F.Q("word", 1, "Name a type of coat or jacket", "Mackintosh=Mac",
   const F = G.F;
   // depth colour stops (metres -> [r,g,b])
   const STOPS = [
-    [0, [19, 54, 56]], [150, [14, 42, 46]], [400, [10, 31, 36]], [1000, [7, 24, 29]],
-    [3000, [4, 15, 19]], [6000, [2, 9, 12]], [11000, [1, 5, 7]], [20000, [8, 4, 13]],
-    [50000, [12, 4, 10]], [90000, [20, 5, 5]], [170000, [28, 8, 3]],
+    [0, [31, 127, 156]], [150, [20, 95, 130]], [400, [12, 64, 99]], [1000, [7, 40, 65]],
+    [3000, [4, 26, 47]], [6000, [2, 15, 31]], [11000, [1, 7, 15]], [20000, [10, 5, 30]],
+    [50000, [16, 6, 22]], [90000, [24, 7, 8]], [170000, [34, 11, 4]],
   ];
   const lg = (m) => Math.log10(1 + Math.max(0, m) / 10);
   function colorAt(m) {
@@ -5283,47 +5026,10 @@ F.Q("word", 1, "Name a type of coat or jacket", "Mackintosh=Mac",
       for (let i = 0; i < 5; i++) {
         const x = W * (0.12 + i * 0.2) + Math.sin(now / 4000 + i) * 30;
         const gr = ctx.createLinearGradient(x, 0, x + 160, H * 0.9);
-        gr.addColorStop(0, `rgba(170,220,200,${0.045 * light})`); gr.addColorStop(1, "rgba(170,220,200,0)");
+        gr.addColorStop(0, `rgba(190,240,255,${0.07 * light})`); gr.addColorStop(1, "rgba(190,240,255,0)");
         ctx.fillStyle = gr; ctx.beginPath(); ctx.moveTo(x - 30, 0); ctx.lineTo(x + 40, 0); ctx.lineTo(x + 260, H); ctx.lineTo(x + 90, H); ctx.closePath(); ctx.fill();
       }
       ctx.restore();
-    }
-
-    // the sub's floodlight, swaying slightly with the hull
-    {
-      const fx = W * 0.5 + Math.sin(now / 5200) * W * 0.04, fy = H * 0.42 + Math.sin(now / 3700) * 10;
-      const fr = Math.max(W, H) * 0.62;
-      const fl = ctx.createRadialGradient(fx, fy, 0, fx, fy, fr);
-      const fa = 0.05 + 0.03 * Math.min(1, d / 600);
-      fl.addColorStop(0, `rgba(190,215,195,${fa})`); fl.addColorStop(0.45, `rgba(150,190,175,${fa * 0.35})`); fl.addColorStop(1, "rgba(0,0,0,0)");
-      ctx.save(); ctx.globalCompositeOperation = "lighter"; ctx.fillStyle = fl; ctx.fillRect(0, 0, W, H); ctx.restore();
-    }
-
-    // something large passes in the dark now and then (below 120 m)
-    if (d > 120 && !O.reduced) {
-      if (!O.sil && now > (O.silNext || (O.silNext = now + 9000 + Math.random() * 12000))) {
-        const dir = Math.random() < 0.5 ? 1 : -1, s = Math.min(W, H) * (0.35 + Math.random() * 0.4);
-        O.sil = { dir, s, x: dir > 0 ? -s * 1.6 : W + s * 1.6, y: H * (0.22 + Math.random() * 0.5), v: (0.35 + Math.random() * 0.35) * dir, ph: 0 };
-      }
-      const k = O.sil;
-      if (k) {
-        k.x += k.v; k.ph += 0.03;
-        const a = 0.32 * Math.min(1, (d - 120) / 400);
-        ctx.save(); ctx.translate(k.x, k.y + Math.sin(k.ph) * 6); ctx.scale(k.dir, 1);
-        if ("filter" in ctx) ctx.filter = "blur(" + Math.round(k.s / 40 + 3) + "px)";
-        ctx.fillStyle = `rgba(0,3,4,${a})`;
-        const s = k.s, tw = Math.sin(k.ph * 2) * s * 0.05;
-        ctx.beginPath();
-        ctx.moveTo(s * 0.62, 0);
-        ctx.quadraticCurveTo(s * 0.3, -s * 0.2, -s * 0.35, -s * 0.06);
-        ctx.lineTo(-s * 0.62, -s * 0.2 + tw); ctx.lineTo(-s * 0.55, tw * 0.3); ctx.lineTo(-s * 0.64, s * 0.16 + tw);
-        ctx.lineTo(-s * 0.35, s * 0.06);
-        ctx.quadraticCurveTo(s * 0.3, s * 0.16, s * 0.62, 0);
-        ctx.moveTo(s * 0.05, -s * 0.12); ctx.lineTo(-s * 0.08, -s * 0.32); ctx.lineTo(-s * 0.16, -s * 0.1);
-        ctx.fill();
-        ctx.restore();
-        if (k.x < -k.s * 2 || k.x > W + k.s * 2) { O.sil = null; O.silNext = now + 25000 + Math.random() * 35000; }
-      }
     }
 
     // jellyfish between 200 m and 6,000 m
@@ -5335,7 +5041,7 @@ F.Q("word", 1, "Name a type of coat or jacket", "Mackintosh=Mac",
         if (j.x < -40) j.x = W + 40; if (j.x > W + 40) j.x = -40;
         const pulse = 1 + Math.sin(j.ph) * 0.12, s = j.s;
         ctx.save(); ctx.translate(j.x, j.y); ctx.globalAlpha = 0.35 * jel;
-        ctx.fillStyle = "rgba(160,200,185,.32)"; ctx.strokeStyle = "rgba(190,220,205,.5)"; ctx.lineWidth = 1;
+        ctx.fillStyle = "rgba(185,162,255,.5)"; ctx.strokeStyle = "rgba(210,195,255,.7)"; ctx.lineWidth = 1;
         ctx.beginPath(); ctx.ellipse(0, 0, s * pulse, s * 0.7 / pulse, 0, Math.PI, 0); ctx.closePath(); ctx.fill();
         for (let k = -2; k <= 2; k++) { ctx.beginPath(); ctx.moveTo(k * s * 0.3, 0); ctx.quadraticCurveTo(k * s * 0.4 + Math.sin(j.ph + k) * 5, s * 1.1, k * s * 0.25, s * 2.2); ctx.stroke(); }
         ctx.restore();
@@ -5359,7 +5065,7 @@ F.Q("word", 1, "Name a type of coat or jacket", "Mackintosh=Mac",
         ctx.shadowColor = `rgba(${p.hue[0]},${p.hue[1]},${p.hue[2]},${a})`; ctx.shadowBlur = 8;
         ctx.beginPath(); ctx.arc(x, p.y, p.r + 0.6, 0, 7); ctx.fill(); ctx.shadowBlur = 0;
       } else {
-        ctx.fillStyle = `rgba(205,215,200,${snowA * (0.4 + p.r / 3)})`;
+        ctx.fillStyle = `rgba(215,235,240,${snowA * (0.4 + p.r / 3)})`;
         if (O.rush > 0.05) { ctx.fillRect(x, p.y, p.r * 0.8, p.r + O.rush * 14); }
         else { ctx.beginPath(); ctx.arc(x, p.y, p.r * 0.8, 0, 7); ctx.fill(); }
       }
@@ -5443,19 +5149,6 @@ F.Q("word", 1, "Name a type of coat or jacket", "Mackintosh=Mac",
     blip(i) { this.tone(990 - i * 110, 0, 0.14, "sine", 0.035); },
     streak(n) { for (let i = 0; i < Math.min(4, n - 1); i++) this.tone(660 * Math.pow(1.122, i), 0.25 + i * 0.07, 0.25, "square", 0.03); },
     snap() { this.tone(440, 0, 0.18, "triangle", 0.08, 220); this.tone(300, 0.12, 0.3, "triangle", 0.06, 120); },
-    groan() {
-      // the hull taking the pressure: two slow, detuned low tones and a faint metallic tick
-      this.tone(58, 0, 3.2, "sawtooth", 0.018, 41);
-      this.tone(87, 0.4, 2.6, "triangle", 0.025, 63);
-      this.tone(33, 0, 3.6, "sine", 0.07, 27);
-      this.tone(2300, 2.1, 0.12, "triangle", 0.008, 1900);
-    },
-    powerup() {
-      this.tone(70, 0, 1.6, "sawtooth", 0.02, 210);
-      this.tone(140, 0.15, 1.3, "sine", 0.05, 420);
-      this.tone(40, 0, 1.8, "sine", 0.08, 30);
-      setTimeout(() => this.ping(), 650);
-    },
     thud(tier) { this.tone(120 - tier * 10, 0, 0.35, "sine", 0.14, 55); },
   });
 })(window);
@@ -5890,7 +5583,7 @@ Reply with only JSON like {"valid": true, "tier": 4, "name": "Correct Spelling",
       const s = (Math.random() * 2.4 + 0.8).toFixed(1);
       return `<i style="left:${(Math.random() * 100).toFixed(1)}%;top:${(surfaceY + Math.random() * (worldH - surfaceY)).toFixed(0)}px;width:${s}px;height:${s}px;animation-delay:-${(Math.random() * 6).toFixed(1)}s"></i>`;
     }).join("");
-    const WATER = ["#1d4a4a", "#163b3d", "#112d31", "#0c2025", "#08161a", "#050d10", "#020506"];
+    const WATER = ["#2a8fae", "#1c7597", "#135c80", "#0d4466", "#082e4b", "#051c31", "#020c18"];
     const strata = F.TIERS.map((t, i) => `<section class="stratum" data-t="${i}" style="top:${surfaceY + i * bandH}px;height:${bandH}px;--tc:var(--t${i});background:linear-gradient(${WATER[i]},${WATER[i + 1]})">
         <div class="st-label">${TI(i)}<div><b>${t.name}</b><span>${F.fmtM(t.pts * 10)} · ${t.pts} pts</span></div></div>
         <div class="st-ghost">${TI(i)}</div>
@@ -7207,10 +6900,10 @@ Reply with only JSON like {"valid": true, "tier": 4, "name": "Correct Spelling",
 
   const BOSSES = [
     { id: "reef", name: "Reef shark", hp: 100, rate: 3.6, qtime: 12000, every: [3200, 4600], mods: ["ink", "weak"], charge: false,
-      pool: (p) => p.d === 1, look: { body: "#56656a", dark: "#38444a", belly: "#a8b0aa", tips: "#0b1013" }, len: 0.9,
+      pool: (p) => p.d === 1, look: { body: "#7f98a8", dark: "#53697a", belly: "#d5e0e4", tips: "#10181e" }, len: 0.9,
       blurb: "Quick, but thin-skinned. It clouds the water and shows weak spots." },
     { id: "gw", name: "Great white", hp: 170, rate: 4.6, qtime: 9500, every: [2800, 4000], mods: ["ink", "weak", "armour"], charge: true,
-      pool: (p) => p.d <= 2, look: { body: "#3c484e", dark: "#262f34", belly: "#c4c7bf", tips: "#262f34" }, len: 1.12,
+      pool: (p) => p.d <= 2, look: { body: "#56697a", dark: "#3a4a57", belly: "#f1f4f5", tips: "#3a4a57" }, len: 1.12,
       blurb: "Bigger, faster, armoured, and it charges without warning." },
   ];
   G.BOSSES = BOSSES;
@@ -7642,24 +7335,24 @@ Reply with only JSON like {"valid": true, "tier": 4, "name": "Correct Spelling",
     if (sh > 0) c.translate(rand(-1, 1) * 14 * sh, rand(-1, 1) * 10 * sh);
     // water
     const g = c.createLinearGradient(0, 0, 0, H);
-    g.addColorStop(0, "#143332"); g.addColorStop(0.45, "#0a1d1f"); g.addColorStop(1, "#020405");
+    g.addColorStop(0, "#0d4e6e"); g.addColorStop(0.45, "#082e48"); g.addColorStop(1, "#020a14");
     c.fillStyle = g; c.fillRect(-30, -30, W + 60, H + 60);
     // light shafts
     c.globalCompositeOperation = "lighter";
     for (let i = 0; i < 5; i++) {
       const x = ((i * 0.27 + 0.1) * W - (B.scroll * 0.05) % (W * 1.3) + W * 1.3) % (W * 1.3) - W * 0.15;
       const a = 0.035 + 0.02 * Math.sin(B.t * 0.6 + i);
-      const lg = c.createLinearGradient(0, 0, 0, H * 0.8); lg.addColorStop(0, `rgba(160,210,190,${a * 0.8})`); lg.addColorStop(1, "rgba(160,210,190,0)");
+      const lg = c.createLinearGradient(0, 0, 0, H * 0.8); lg.addColorStop(0, `rgba(150,220,240,${a})`); lg.addColorStop(1, "rgba(150,220,240,0)");
       c.fillStyle = lg; c.beginPath(); c.moveTo(x, -10); c.lineTo(x + 70, -10); c.lineTo(x - 80, H * 0.8); c.lineTo(x - 210, H * 0.8); c.fill();
     }
     c.globalCompositeOperation = "source-over";
     // far ridge
-    ridge(c, 0.12, H * 0.78, 60, "#071312", 1);
+    ridge(c, 0.12, H * 0.78, 60, "#04192a", 1);
     // kelp
-    kelp(c, 0.45, "#0d2a24", 0.9);
-    ridge(c, 0.3, H * 0.88, 40, "#030808", 2);
+    kelp(c, 0.45, "#0a3a36", 0.9);
+    ridge(c, 0.3, H * 0.88, 40, "#031220", 2);
     // marine snow, streaking past
-    c.fillStyle = "rgba(205,215,200,.45)";
+    c.fillStyle = "rgba(200,235,245,.5)";
     for (const s of B.snow) { const l = 2 + s.z * (B.pop ? 4 : 14); c.globalAlpha = 0.25 + s.z * 0.5; c.fillRect(s.x, s.y, l, 1 + s.z); }
     c.globalAlpha = 1;
     // pickups and the sparkle when one is grabbed
@@ -7922,156 +7615,6 @@ Reply with only JSON like {"valid": true, "tier": 4, "name": "Correct Spelling",
     $("#bHome").onclick = () => A.showHome();
     setTimeout(() => { const b = $("#bAgain"); if (b) b.focus({ preventScroll: true }); }, 200);
   }
-})(window);
-
-/* Opening sequence: the dive control console powers up in the dark, the cabin lights come on red,
-   the viewport shutters part on the sea, and the title surfaces with a sonar ping. Plays once per
-   browser session; Skip, Escape or a tap on "Begin descent" ends it. Also runs the ambient hull
-   groans and light brown-outs during play. */
-(function (G) {
-  const O = G.OCEAN, SND = G.SND;
-  const doc = document, body = doc.body;
-  const reduced = () => (G.matchMedia && G.matchMedia("(prefers-reduced-motion: reduce)").matches) || doc.documentElement.classList.contains("reduced");
-
-  // ---------- ambient: hull groans and brown-outs ----------
-  let ambT = null;
-  function ambient() {
-    clearTimeout(ambT);
-    ambT = setTimeout(() => {
-      const busy = doc.hidden || doc.documentElement.classList.contains("bf-on") || body.classList.contains("intro-on");
-      if (!busy) {
-        if (SND && SND.on && SND.ctx && SND.groan) SND.groan();
-        if (!reduced() && Math.random() < 0.7) {
-          setTimeout(() => { body.classList.add("flicker"); setTimeout(() => body.classList.remove("flicker"), 950); }, 500);
-        }
-      }
-      ambient();
-    }, 40000 + Math.random() * 55000);
-  }
-
-  let seen = false;
-  try { seen = sessionStorage.getItem("fathom-intro") === "1"; } catch (e) {}
-  if (seen) { ambient(); return; }
-
-  const LINES = [
-    ["DSV FATHOM  /  dive control", ""],
-    ["hull pressure ............ nominal", "ok"],
-    ["ballast tanks ............ flooding", ""],
-    ["external lamps ........... 2 of 3", "warn"],
-    ["sonar .................... contact lost", "warn"],
-    ["viewport shutter ......... opening", ""],
-  ];
-  const WORD = "FATHOM";
-
-  const el = doc.createElement("div");
-  el.className = "intro";
-  el.setAttribute("role", "dialog");
-  el.setAttribute("aria-label", "Fathom");
-  el.innerHTML = `
-    <div class="shut top"></div><div class="shut bot"></div>
-    <div class="glow"></div><div class="ring"></div><div class="ring r2"></div><div class="blk"></div>
-    <div class="boot" aria-hidden="true"></div>
-    <i class="lamp" aria-hidden="true"></i>
-    <div class="readout" aria-hidden="true"><span>0</span> m<small>Descending</small></div>
-    <div class="title">
-      <h1 aria-label="Fathom">${WORD.split("").map((c) => `<span>${c}</span>`).join("")}</h1>
-      <p>Every prompt has hundreds of right answers. The rarer yours, the deeper you sink.</p>
-      <button class="btn primary" type="button">Begin descent</button>
-    </div>
-    <div class="flash"></div>
-    <button class="skip" type="button">Skip intro</button>`;
-  body.appendChild(el);
-  body.classList.add("intro-on");
-
-  const $ = (s) => el.querySelector(s);
-  const timers = [];
-  const at = (ms, fn) => timers.push(setTimeout(fn, ms));
-  let state = "play"; // play | ready | leaving
-
-  function typeLines(start) {
-    const box = $(".boot");
-    let t = start;
-    LINES.forEach(([txt, cls]) => {
-      const row = doc.createElement("div");
-      if (cls) row.className = cls;
-      at(t, () => { box.appendChild(row); });
-      for (let i = 1; i <= txt.length; i++) at(t + i * 10, () => { row.textContent = txt.slice(0, i); });
-      t += txt.length * 10 + 170;
-    });
-    return t;
-  }
-
-  function countUp(target, ms) {
-    const span = $(".readout span"), t0 = performance.now();
-    const step = (now) => {
-      if (state === "leaving") return;
-      const k = Math.min(1, (now - t0) / ms), v = Math.round(target * (1 - Math.pow(1 - k, 3)));
-      span.textContent = v.toLocaleString("en-GB");
-      if (k < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }
-
-  function ready() {
-    if (state !== "play") return;
-    state = "ready";
-    timers.forEach(clearTimeout);
-    el.classList.add("lit", "open", "ready");
-    $(".boot").style.opacity = ".22";
-    $(".readout").style.opacity = "1";
-    el.querySelectorAll(".title h1 span").forEach((s) => s.classList.add("in"));
-    $(".title .btn").focus({ preventScroll: true });
-  }
-
-  function leave() {
-    if (state === "leaving") return;
-    state = "leaving";
-    timers.forEach(clearTimeout);
-    try { sessionStorage.setItem("fathom-intro", "1"); } catch (e) {}
-    if (SND) {
-      SND.init();
-      if (SND.on) { SND.powerup ? SND.powerup() : SND.ping(); }
-    }
-    if (O && !reduced()) { O.rush = Math.max(O.rush || 0, 1.1); O.kick && O.kick(); }
-    el.classList.add("leave");
-    G.removeEventListener("keydown", onKey, true);
-    setTimeout(() => { el.remove(); body.classList.remove("intro-on"); ambient(); }, reduced() ? 50 : 1100);
-  }
-
-  function onKey(e) {
-    if (e.key === "Escape") { e.preventDefault(); leave(); }
-    else if ((e.key === "Enter" || e.key === " ") && state === "ready") { e.preventDefault(); leave(); }
-  }
-  G.addEventListener("keydown", onKey, true);
-  $(".skip").onclick = (e) => { e.stopPropagation(); leave(); };
-  $(".title .btn").onclick = (e) => { e.stopPropagation(); leave(); };
-  el.addEventListener("click", () => { if (state === "ready") leave(); });
-
-  if (reduced()) { ready(); return; }
-
-  // ---------- timeline ----------
-  at(250, () => $(".lamp").classList.add("on"));
-  const typed = typeLines(600);
-  const lit = typed + 250;
-  at(lit, () => { $(".flash").classList.add("go"); });
-  at(lit + 350, () => { el.classList.add("lit"); });
-  const open = lit + 1300;
-  at(open, () => {
-    el.classList.add("open");
-    $(".boot").style.opacity = ".22";
-    $(".readout").style.opacity = "1";
-    countUp(180, 2600);
-    if (O) {
-      O.rush = 1.4; O.kick && O.kick();
-      const w = G.innerWidth, h = G.innerHeight;
-      for (let i = 0; i < 4; i++) setTimeout(() => O.burst && O.burst(w * (0.2 + Math.random() * 0.6), h * 0.95, 14), i * 260);
-    }
-  });
-  const titleAt = open + 1500;
-  WORD.split("").forEach((_, i) => at(titleAt + i * 120, () => el.querySelectorAll(".title h1 span")[i].classList.add("in")));
-  at(titleAt + 300, () => { $(".ring").classList.add("go"); });
-  at(titleAt + 1100, () => { $(".ring.r2").classList.add("go"); });
-  at(titleAt + WORD.length * 120 + 700, ready);
 })(window);
 
 </script></body></html>
