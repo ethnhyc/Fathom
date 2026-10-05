@@ -51,7 +51,9 @@ trivia. Every listed answer must be correct for the prompt, nothing may appear t
 prompt, and the pearl must not also be in a tier. A good prompt has 60+ accepted answers.
 
 Each day: at most 2 prompts from any pack, at most 1 prompt with `d: 3`, and no prompt that is
-already in the main bank (`tools/bank.txt`) or in another day's file. Aim for variety across the
+already in the main game or in another day's file. The checker reads the game's current prompts
+straight from `index.html`, so prompts anyone adds to the game are covered; `tools/bank.txt` is a
+readable snapshot of them. Aim for variety across the
 week too.
 
 ## Checking a file

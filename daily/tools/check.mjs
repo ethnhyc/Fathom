@@ -28,10 +28,17 @@ if (!/^\d{4}-\d{2}-\d{2}$/.test(key)) bad("File name must be YYYY-MM-DD.json");
 if (j.date !== key) bad(`"date" is ${JSON.stringify(j.date)} but the file is ${key}.json`);
 if (!Array.isArray(j.prompts) || j.prompts.length !== 7) bad("Needs exactly 7 prompts.");
 
-// prompts already used: the main bank and every other day's file
+// prompts already used: the main bank as it is in the live index.html (so prompts anyone adds to
+// the game count straight away), the bank.txt snapshot, and every other day's file
 const used = new Map();
+const indexFile = path.resolve(dailyDir, "..", "index.html");
+if (fs.existsSync(indexFile)) {
+  const html = fs.readFileSync(indexFile, "utf8");
+  for (const m of html.matchAll(/F\.Q\(\s*"(\w+)"\s*,\s*\d\s*,\s*"((?:[^"\\]|\\.)*)"/g)) used.set(F.norm(JSON.parse('"' + m[2] + '"')), "the main bank (index.html)");
+}
+if (used.size < 100) bad("Couldn't read the main bank's prompts from index.html; check the repo is complete.");
 fs.readFileSync(path.join(here, "bank.txt"), "utf8").split("\n").filter((l) => l && !l.startsWith("#"))
-  .forEach((l) => used.set(F.norm(l.split("\t")[2]), "the main bank"));
+  .forEach((l) => { const k = F.norm(l.split("\t")[2]); if (!used.has(k)) used.set(k, "the main bank (bank.txt)"); });
 for (const f of fs.readdirSync(dailyDir)) {
   if (!/^\d{4}-\d{2}-\d{2}\.json$/.test(f) || f === key + ".json") continue;
   try { JSON.parse(fs.readFileSync(path.join(dailyDir, f), "utf8")).prompts.forEach((p) => used.set(F.norm(p.q), f)); } catch (e) {}
