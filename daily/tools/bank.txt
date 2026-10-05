@@ -1,0 +1,501 @@
+# Every prompt already in the main bank (pack, difficulty, prompt). Daily prompts must not repeat these.
+cul	1	Name a Beatles song
+cul	1	Name a Christmas song or carol
+cul	1	Name a Disney animated film
+cul	1	Name a Disney villain
+cul	1	Name a Friends character
+cul	1	Name a Harry Potter character
+cul	1	Name a Lord of the Rings character
+cul	1	Name a Marvel Cinematic Universe film
+cul	1	Name a Pixar film
+cul	1	Name a Roald Dahl book
+cul	1	Name a Simpsons character
+cul	1	Name a Star Wars character
+cul	1	Name a TV game show
+cul	1	Name a TV soap opera
+cul	1	Name a band
+cul	1	Name a car brand
+cul	1	Name a cartoon character
+cul	1	Name a children's TV show
+cul	1	Name a children's book
+cul	1	Name a classical composer
+cul	1	Name a dance
+cul	1	Name a fairy tale
+cul	1	Name a famous comedian
+cul	1	Name a famous painting
+cul	1	Name a famous singer
+cul	1	Name a fashion brand or designer
+cul	1	Name a fictional detective
+cul	1	Name a language
+cul	1	Name a music genre
+cul	1	Name a musical instrument
+cul	1	Name a nursery rhyme
+cul	1	Name a painter
+cul	1	Name a poet
+cul	1	Name a sitcom
+cul	1	Name a stage musical
+cul	1	Name a superhero
+cul	1	Name a type of hat
+cul	2	Name a Batman villain
+cul	2	Name a Best Picture Oscar winner
+cul	2	Name a James Bond film
+cul	2	Name a Muppet
+cul	2	Name a Shakespeare character
+cul	2	Name a Shakespeare play
+cul	2	Name a ballet
+cul	2	Name a famous architect
+cul	2	Name a famous rapper
+cul	2	Name a film director
+cul	2	Name a horror film
+cul	2	Name a newspaper or magazine
+cul	2	Name a novelist
+cul	2	Name a philosopher
+cul	2	Name a spell from Harry Potter
+cul	2	Name an opera
+cul	3	Name a novel by Charles Dickens
+cul	3	Name a sculptor
+cul	3	Name an art movement
+food	1	Name a Christmas food
+food	1	Name a biscuit or cookie
+food	1	Name a breakfast cereal
+food	1	Name a breakfast food
+food	1	Name a cheese
+food	1	Name a chocolate bar
+food	1	Name a classic American dish
+food	1	Name a crisp (potato chip) flavour
+food	1	Name a dessert
+food	1	Name a fast food chain
+food	1	Name a fizzy drink
+food	1	Name a food you'd have at a barbecue
+food	1	Name a fruit
+food	1	Name a herb or spice
+food	1	Name a kitchen appliance
+food	1	Name a kitchen utensil
+food	1	Name a pizza topping
+food	1	Name a potato dish
+food	1	Name a rice dish
+food	1	Name a sauce or condiment
+food	1	Name a spirit (vodka, gin...)
+food	1	Name a supermarket chain
+food	1	Name a traditional British dish
+food	1	Name a type of bread
+food	1	Name a type of dumpling
+food	1	Name a vegetable
+food	1	Name an Italian dish
+food	1	Name an egg dish
+food	1	Name an ice cream flavour
+food	1	Name something you'd put on toast
+food	2	Name a Chinese dish
+food	2	Name a French dish
+food	2	Name a Greek dish
+food	2	Name a Japanese dish
+food	2	Name a Korean dish
+food	2	Name a Mexican dish
+food	2	Name a Middle Eastern dish
+food	2	Name a Spanish dish
+food	2	Name a Thai dish
+food	2	Name a bean or pulse
+food	2	Name a cocktail
+food	2	Name a coffee drink
+food	2	Name a cooking method
+food	2	Name a cooking oil or fat
+food	2	Name a fish you'd eat
+food	2	Name a nut
+food	2	Name a pasta shape
+food	2	Name a salad
+food	2	Name a sandwich
+food	2	Name a soup
+food	2	Name a sweet (candy)
+food	2	Name a type of cake
+food	2	Name a type of chilli pepper
+food	2	Name a type of noodle
+food	2	Name a type of pastry
+food	2	Name a type of pie
+food	2	Name a type of shellfish or seafood
+food	2	Name a type of tea
+food	2	Name a variety of apple
+food	2	Name an Indian dish
+food	3	Name a cut of meat
+food	3	Name a grape variety
+food	3	Name a style of beer
+food	3	Name a type of sausage
+geo	1	Name a British seaside town
+geo	1	Name a European country
+geo	1	Name a US state
+geo	1	Name a city in Canada
+geo	1	Name a city in Europe
+geo	1	Name a city in the UK
+geo	1	Name a city in the USA
+geo	1	Name a country
+geo	1	Name a country in Asia
+geo	1	Name a famous bridge
+geo	1	Name a famous museum or gallery
+geo	1	Name a famous street
+geo	1	Name a lake
+geo	1	Name a mountain
+geo	1	Name a place in Scotland
+geo	1	Name a river
+geo	1	Name a theme park
+geo	1	Name a volcano
+geo	1	Name an island
+geo	2	Name a Caribbean island
+geo	2	Name a Greek island
+geo	2	Name a London Underground station
+geo	2	Name a London borough
+geo	2	Name a US national park
+geo	2	Name a US state capital
+geo	2	Name a bay or gulf
+geo	2	Name a capital city
+geo	2	Name a city in Africa
+geo	2	Name a city in Australia
+geo	2	Name a city in China
+geo	2	Name a city in France
+geo	2	Name a city in Germany
+geo	2	Name a city in India
+geo	2	Name a city in Ireland
+geo	2	Name a city in Italy
+geo	2	Name a city in Japan
+geo	2	Name a city in Mexico
+geo	2	Name a city in Russia
+geo	2	Name a city in Scandinavia
+geo	2	Name a city in South America
+geo	2	Name a city in Spain
+geo	2	Name a country in Africa
+geo	2	Name a country in the Middle East
+geo	2	Name a country that borders China
+geo	2	Name a country whose flag has a star on it
+geo	2	Name a currency
+geo	2	Name a desert
+geo	2	Name a famous canal
+geo	2	Name a famous park or garden
+geo	2	Name a famous square or plaza
+geo	2	Name a landlocked country
+geo	2	Name a mountain range
+geo	2	Name a sea
+geo	2	Name a ski resort
+geo	2	Name a skyscraper or very tall building
+geo	2	Name a strait or channel
+geo	2	Name a town in Wales
+geo	2	Name a waterfall
+geo	2	Name an English county
+geo	2	Name an airport
+geo	3	Name a Canadian province or territory
+geo	3	Name a country in South America
+geo	3	Name a country that uses the euro
+geo	3	Name a peninsula
+his	1	Name a Greek god or goddess
+his	1	Name a Roman god or goddess
+his	1	Name a US president
+his	1	Name a castle
+his	1	Name a cathedral
+his	1	Name a famous battle
+his	1	Name a famous disaster
+his	1	Name a famous monument or landmark
+his	1	Name a famous queen
+his	1	Name a figure from the Bible
+his	1	Name a historical period or era
+his	1	Name a job from the Middle Ages
+his	1	Name a medieval weapon or piece of armour
+his	1	Name a mythical or legendary place
+his	1	Name a mythological creature
+his	1	Name a royal palace or residence
+his	1	Name a saint
+his	1	Name a suffragette or women's rights campaigner
+his	1	Name a war
+his	1	Name an ancient city
+his	1	Name an ancient civilisation
+his	1	Name an empire
+his	1	Name an explorer
+his	2	Name a Founding Father of the United States
+his	2	Name a Knight of the Round Table
+his	2	Name a Native American nation or tribe
+his	2	Name a Norse god
+his	2	Name a Roman emperor
+his	2	Name a Russian or Soviet leader
+his	2	Name a Tudor
+his	2	Name a UK prime minister
+his	2	Name a US First Lady
+his	2	Name a Wild West figure
+his	2	Name a civil rights campaigner
+his	2	Name a country that no longer exists
+his	2	Name a famous Victorian
+his	2	Name a famous ancient Greek (not a god)
+his	2	Name a famous ancient Roman
+his	2	Name a famous archaeological site
+his	2	Name a famous figure from World War II
+his	2	Name a famous figure from the Cold War
+his	2	Name a famous general or military commander
+his	2	Name a famous horse
+his	2	Name a famous outlaw or gangster
+his	2	Name a famous pirate
+his	2	Name a famous prison
+his	2	Name a famous ship
+his	2	Name a famous spy
+his	2	Name a hero from Greek myth
+his	2	Name a historical document or treaty
+his	2	Name a monarch of England or Britain
+his	2	Name a revolution
+his	2	Name a royal house or dynasty
+his	2	Name an Egyptian god or goddess
+his	2	Name an Egyptian pharaoh
+his	2	Name an ancient Greek or Roman writer
+his	2	Name an economist
+his	2	Name something from feudal Japan
+his	3	Name a Chinese dynasty
+his	3	Name a French king or queen
+his	3	Name a Viking
+his	3	Name a pope
+nat	1	Name a bird
+nat	1	Name a bird of prey
+nat	1	Name a bug you'd find in a garden
+nat	1	Name a crop that farmers grow
+nat	1	Name a dinosaur
+nat	1	Name a dog breed
+nat	1	Name a farm animal
+nat	1	Name a fish
+nat	1	Name a flower
+nat	1	Name a hoofed animal
+nat	1	Name a lizard
+nat	1	Name a mammal
+nat	1	Name a primate
+nat	1	Name a reptile
+nat	1	Name a rodent
+nat	1	Name a tree
+nat	1	Name a type of bear
+nat	1	Name a type of bee, wasp or hornet
+nat	1	Name a type of duck, goose or swan
+nat	1	Name a type of penguin
+nat	1	Name a type of turtle or tortoise
+nat	1	Name a venomous animal
+nat	1	Name a word for a baby animal
+nat	1	Name an Australian animal
+nat	1	Name an animal found in Africa
+nat	1	Name an animal that lives in a herd
+nat	1	Name an animal that lives in the desert
+nat	1	Name an animal with a shell
+nat	1	Name an animal with stripes or spots
+nat	1	Name an endangered animal
+nat	1	Name an insect
+nat	2	Name a British garden bird
+nat	2	Name a beetle
+nat	2	Name a breed of cat
+nat	2	Name a butterfly
+nat	2	Name a cactus or succulent
+nat	2	Name a crustacean
+nat	2	Name a flightless bird
+nat	2	Name a freshwater fish
+nat	2	Name a horse breed
+nat	2	Name a houseplant
+nat	2	Name a marsupial
+nat	2	Name a nocturnal animal
+nat	2	Name a parrot
+nat	2	Name a polar animal
+nat	2	Name a rainforest animal
+nat	2	Name a sea creature that isn't a fish
+nat	2	Name a seabird
+nat	2	Name a shrub or bush
+nat	2	Name a snake
+nat	2	Name a spider
+nat	2	Name a type of deer
+nat	2	Name a type of owl
+nat	2	Name a type of shark
+nat	2	Name a whale or dolphin
+nat	2	Name a wild cat
+nat	2	Name a wildflower
+nat	2	Name an amphibian
+nat	2	Name an animal native to Asia
+nat	2	Name an animal native to South America
+nat	2	Name an animal that hibernates
+nat	2	Name an extinct animal
+nat	3	Name a mushroom or fungus
+sci	1	Name a TV or video streaming service
+sci	1	Name a building material
+sci	1	Name a car model
+sci	1	Name a chemical element
+sci	1	Name a computer or phone operating system
+sci	1	Name a famous robot (real or fictional)
+sci	1	Name a gas
+sci	1	Name a key on a computer keyboard
+sci	1	Name a medicine you can buy at a pharmacy
+sci	1	Name a part of a car
+sci	1	Name a part of a computer
+sci	1	Name a part of a plant
+sci	1	Name a part of the mouth
+sci	1	Name a phone brand
+sci	1	Name a programming language
+sci	1	Name a scientific measuring instrument
+sci	1	Name a social media platform
+sci	1	Name a tech company
+sci	1	Name a type of storm or extreme weather
+sci	1	Name a unit of measurement
+sci	1	Name a website
+sci	1	Name an app you'd find on a phone
+sci	1	Name an infectious disease
+sci	1	Name an invention
+sci	1	Name an inventor
+sci	1	Name an organ of the human body
+sci	1	Name something in the solar system that isn't a moon
+sci	1	Name something that runs on batteries
+sci	1	Name something you'd find in a hospital
+sci	2	Name a 3D shape
+sci	2	Name a biologist or naturalist
+sci	2	Name a bone in the human body
+sci	2	Name a branch of science
+sci	2	Name a chemical compound
+sci	2	Name a constellation
+sci	2	Name a famous female scientist
+sci	2	Name a file format
+sci	2	Name a hormone
+sci	2	Name a mathematician
+sci	2	Name a maths term
+sci	2	Name a mineral
+sci	2	Name a moon in the solar system
+sci	2	Name a muscle in the human body
+sci	2	Name a part of a cell
+sci	2	Name a part of the brain
+sci	2	Name a part of the eye
+sci	2	Name a physicist
+sci	2	Name a piece of lab equipment
+sci	2	Name a spacecraft or space mission
+sci	2	Name a subatomic particle
+sci	2	Name a type of doctor or medical specialist
+sci	2	Name a type of energy
+sci	2	Name a type of rock
+sci	2	Name a vitamin or mineral your body needs
+sci	2	Name an acid
+sci	2	Name an alloy
+sci	2	Name an astronaut
+sci	3	Name a chemist
+sci	3	Name a scientific law, principle or theory
+sci	3	Name a star other than the Sun
+sci	3	Name a tectonic plate
+sci	3	Name a type of cloud
+sport	1	Name a Minecraft block or item
+sport	1	Name a Nintendo character
+sport	1	Name a Pokemon
+sport	1	Name a ball sport
+sport	1	Name a board game
+sport	1	Name a card game
+sport	1	Name a casino game
+sport	1	Name a famous Olympian
+sport	1	Name a famous female athlete
+sport	1	Name a famous footballer
+sport	1	Name a famous sporting event or trophy
+sport	1	Name a football (soccer) term
+sport	1	Name a game played with dice
+sport	1	Name a gym exercise
+sport	1	Name a martial art
+sport	1	Name a party game
+sport	1	Name a pen-and-paper game
+sport	1	Name a piece of sports equipment
+sport	1	Name a playground game
+sport	1	Name a sports brand
+sport	1	Name a toy
+sport	1	Name a track and field event
+sport	1	Name a video game
+sport	1	Name a video game character (not Nintendo)
+sport	1	Name a water sport
+sport	1	Name a winter sport
+sport	1	Name an Olympic sport
+sport	2	Name a European football club outside England
+sport	2	Name a Formula 1 Grand Prix or circuit
+sport	2	Name a Formula 1 team (past or present)
+sport	2	Name a Formula 1 world champion
+sport	2	Name a Major League Baseball team
+sport	2	Name a Monopoly property (UK or US board)
+sport	2	Name a Pokemon type
+sport	2	Name a WWE wrestler (past or present)
+sport	2	Name a Wimbledon singles champion
+sport	2	Name a baseball term
+sport	2	Name a basketball term
+sport	2	Name a boxer
+sport	2	Name a chess term
+sport	2	Name a cricket term
+sport	2	Name a cycling term
+sport	2	Name a famous basketball player
+sport	2	Name a famous cricketer
+sport	2	Name a famous football manager
+sport	2	Name a football stadium
+sport	2	Name a golf term
+sport	2	Name a golfer
+sport	2	Name a gymnastics move or apparatus
+sport	2	Name a mobile phone game
+sport	2	Name a poker hand
+sport	2	Name a skateboard trick
+sport	2	Name a snooker or darts player
+sport	2	Name a swimming term or stroke
+sport	2	Name a tennis term
+sport	2	Name a video game console
+sport	2	Name an English football club
+sport	2	Name an NBA team
+sport	2	Name an NFL team
+sport	2	Name an Olympic host city
+sport	2	Name an extreme sport
+sport	3	Name a Scottish football club
+sport	3	Name a cricket fielding position
+sport	3	Name a position in rugby (union or league)
+sport	3	Name a yoga pose
+word	1	Name a 2D shape
+word	1	Name a colour
+word	1	Name a fabric
+word	1	Name a hand tool
+word	1	Name a job
+word	1	Name a noise an animal makes
+word	1	Name a synonym for 'angry'
+word	1	Name a synonym for 'big'
+word	1	Name a synonym for 'fast'
+word	1	Name a synonym for 'happy'
+word	1	Name a synonym for 'sad'
+word	1	Name a synonym for 'small'
+word	1	Name a type of boat
+word	1	Name a type of coat or jacket
+word	1	Name a type of home
+word	1	Name a type of shoe
+word	1	Name a type of vehicle
+word	1	Name a word that rhymes with 'cat'
+word	1	Name a word that rhymes with 'day'
+word	1	Name a word that rhymes with 'moon'
+word	1	Name a word that starts with 'fire'
+word	1	Name a word that starts with 'sun'
+word	1	Name a word that starts with 'under'
+word	1	Name a word that starts with 'water'
+word	1	Name a word that starts with J
+word	1	Name a word that starts with K
+word	1	Name a word that starts with V
+word	1	Name a word that starts with Z
+word	1	Name an English word borrowed from French
+word	1	Name an onomatopoeic word
+word	2	Name a British slang word
+word	2	Name a Latin phrase used in English
+word	2	Name a body part with exactly three letters
+word	2	Name a collective noun for animals
+word	2	Name a letter of the Greek alphabet
+word	2	Name a palindrome
+word	2	Name a phobia
+word	2	Name a punctuation mark
+word	2	Name a shade of blue
+word	2	Name a shade of brown
+word	2	Name a shade of green
+word	2	Name a shade of purple or pink
+word	2	Name a shade of red
+word	2	Name a shade of white or grey
+word	2	Name a shade of yellow or orange
+word	2	Name a typeface
+word	2	Name a word containing 'ough'
+word	2	Name a word ending in -ism
+word	2	Name a word ending in -ology
+word	2	Name a word for a female animal
+word	2	Name a word from the NATO phonetic alphabet
+word	2	Name a word that starts with Q
+word	2	Name a word that starts with X
+word	2	Name a word with a double Z in it
+word	2	Name a word with a silent letter
+word	2	Name an English word borrowed from German
+word	2	Name an English word borrowed from Italian
+word	2	Name an English word borrowed from Japanese
+word	2	Name an English word borrowed from Spanish
+word	2	Name an acronym
+word	3	Name a portmanteau word
+word	3	Name a word with no A, E, I, O or U
+word	3	Name an English word borrowed from Arabic
+word	3	Name an English word borrowed from Hindi or Urdu

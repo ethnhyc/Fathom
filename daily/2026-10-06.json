@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-06",
+  "prompts": [
+    {
+      "pack": "geo",
+      "d": 1,
+      "q": "Name a city in Asia",
+      "pearl": "Ulaanbaatar=Ulan Bator",
+      "tiers": [
+        "Tokyo|Beijing|Bangkok|Singapore|Hong Kong|Seoul|Mumbai=Bombay|Delhi=New Delhi|Shanghai|Dubai",
+        "Kathmandu|Pyongyang|Kabul",
+        "Osaka|Kyoto|Hiroshima|Busan|Taipei|Manila|Jakarta|Kuala Lumpur|Hanoi|Ho Chi Minh City=Saigon|Phnom Penh|Yangon=Rangoon|Dhaka|Karachi|Lahore|Islamabad|Kolkata=Calcutta|Chennai=Madras|Bangalore=Bengaluru|Hyderabad|Colombo|Abu Dhabi|Doha|Riyadh|Tehran|Baghdad|Jerusalem|Tel Aviv|Istanbul|Macau|Shenzhen|Guangzhou|Chengdu|Xi'an|Wuhan|Nanjing|Hangzhou|Chongqing|Harbin|Sapporo|Yokohama|Nagoya|Fukuoka|Nagasaki|Phuket|Chiang Mai|Kuwait City|Muscat|Beirut|Damascus|Amman|Mecca|Medina|Jeddah",
+        "Almaty|Astana|Tashkent|Samarkand|Bukhara|Bishkek|Dushanbe|Ashgabat|Thimphu|Vientiane|Luang Prabang|Mandalay|Naypyidaw|Bandar Seri Begawan|Dili|Cebu|Davao|Surabaya|Yogyakarta|Penang=George Town|Malacca|Ipoh|Da Nang|Hue|Siem Reap|Agra|Jaipur|Varanasi|Amritsar|Goa|Kochi|Lhasa|Kandy|Male|Sana'a|Aden|Mashhad|Isfahan|Shiraz|Tabriz",
+        "Herat|Mazar-i-Sharif|Kandahar|Peshawar|Quetta|Multan|Faisalabad|Chittagong|Sylhet|Pokhara|Paro|Hulunbuir|Urumqi|Kashgar|Lanzhou|Kunming|Guilin|Xiamen|Qingdao|Dalian|Shenyang|Changchun|Vladivostok|Novosibirsk|Irkutsk|Yakutsk|Kanazawa|Matsuyama|Naha|Gyeongju|Jeonju|Incheon|Kaohsiung|Tainan|Iloilo|Zamboanga|Makassar|Medan|Palembang|Kuching|Kota Kinabalu|Battambang|Savannakhet|Bago|Jaffna|Galle|Salalah|Nizwa|Sharjah|Ajman|Manama"
+      ]
+    },
+    {
+      "pack": "nat",
+      "d": 1,
+      "q": "Name an animal you'd see at a zoo",
+      "pearl": "Okapi",
+      "tiers": [
+        "Lion|Tiger|Elephant|Giraffe|Monkey|Zebra|Penguin|Gorilla|Bear|Hippo=Hippopotamus",
+        "Panda=Giant panda|Meerkat|Flamingo",
+        "Rhino=Rhinoceros|Chimpanzee=Chimp|Orangutan|Cheetah|Leopard|Jaguar|Snow leopard|Polar bear|Brown bear|Sea lion|Seal|Otter|Kangaroo|Wallaby|Koala|Camel|Llama|Alpaca|Crocodile|Alligator|Snake|Python|Tortoise|Turtle|Lemur|Baboon|Gibbon|Red panda|Sloth|Anteater|Tapir|Hyena|Wolf|Bison|Ostrich|Emu|Parrot|Macaw|Toucan|Pelican|Owl|Eagle|Vulture|Iguana|Komodo dragon|Gecko|Bat|Porcupine|Capybara|Warthog|Antelope|Gazelle|Wildebeest|Deer|Yak|Reindeer|Goat|Tarantula|Scorpion|Butterfly|Fish|Shark|Stingray|Jellyfish|Octopus",
+        "Mandrill|Tamarin|Marmoset|Gelada|Colobus monkey|Aye-aye|Fossa|Binturong|Pangolin|Aardvark|Armadillo|Bongo|Kudu|Oryx|Nyala|Sitatunga|Gaur|Banteng|Bactrian camel|Przewalski's horse|Onager|Clouded leopard|Ocelot|Serval|Caracal|Lynx|Wolverine|Wombat|Tasmanian devil|Quokka|Echidna|Platypus|Kookaburra|Cassowary|Hornbill|Spoonbill|Shoebill|Secretary bird|Axolotl|Chameleon|Gila monster|Poison dart frog|Hellbender",
+        "Saiga|Babirusa|Takin|Markhor|Dik-dik|Duiker|Klipspringer|Gerenuk|Sun bear|Spectacled bear|Maned wolf|Bush dog|Dhole|African wild dog=Painted dog|Fennec fox|Kinkajou|Coati|Tayra|Sand cat|Pallas's cat=Manul|Fishing cat|Rock hyrax|Naked mole rat|Tree kangaroo|Bearded vulture|Kea|Kakapo|Tuatara|Olm|Matamata"
+      ]
+    },
+    {
+      "pack": "sci",
+      "d": 1,
+      "q": "Name something that runs on electricity",
+      "pearl": "Theremin",
+      "tiers": [
+        "Fridge=Refrigerator|TV=Television|Kettle|Computer|Laptop|Phone=Mobile phone|Lamp|Light bulb|Microwave|Washing machine",
+        "Electric car|Tesla|Train",
+        "Toaster|Oven|Dishwasher|Freezer|Hairdryer=Hair dryer|Straighteners|Vacuum cleaner=Hoover|Iron|Fan|Heater|Air conditioner|Radio|Speaker|Games console|PlayStation|Xbox|Printer|Router|Tablet|iPad|Electric toothbrush|Shaver|Blender|Food processor|Coffee machine|Air fryer|Slow cooker|Tumble dryer|Doorbell|Alarm clock|Clock|Fairy lights|Christmas lights|Traffic lights|Lift=Elevator|Escalator|Tram|Underground=Tube|E-bike|Electric scooter|Drill|Electric guitar|Keyboard|Amplifier|Electric blanket|Electric fire|Fridge freezer|Dehumidifier|Projector|Monitor|Camera|Robot|Robot vacuum|Smart speaker|Sewing machine",
+        "Pacemaker|Defibrillator|MRI scanner|X-ray machine|Electric chair|Electric fence|Taser|Neon sign|Electric organ|Synthesizer|Milk float|Treadmill|Hot tub|Sauna|Heat pump|Immersion heater|Electric shower|Underfloor heating|Chairlift|Ski lift|Cable car|Trolleybus",
+        "Tesla coil|Van de Graaff generator|Particle accelerator|Large Hadron Collider|Electron microscope|Cyclotron|Electromagnet|Maglev train|Arc welder|Plasma ball|Jacob's ladder|Linear accelerator|Oscilloscope"
+      ]
+    },
+    {
+      "pack": "his",
+      "d": 2,
+      "q": "Name a famous figure from the Renaissance",
+      "pearl": "Isabella d'Este",
+      "tiers": [
+        "Leonardo da Vinci=Leonardo|Michelangelo|Raphael|Galileo=Galileo Galilei|Shakespeare=William Shakespeare|Botticelli=Sandro Botticelli",
+        "Donatello|Copernicus=Nicolaus Copernicus|Machiavelli=Niccolo Machiavelli",
+        "Titian|Brunelleschi=Filippo Brunelleschi|Lorenzo de' Medici=Lorenzo the Magnificent|Cosimo de' Medici|Medici|Erasmus|Albrecht Durer=Durer|Gutenberg=Johannes Gutenberg|Christopher Columbus=Columbus|Thomas More|Martin Luther|Henry VIII|Elizabeth I|Jan van Eyck=Van Eyck|Hieronymus Bosch=Bosch|Pieter Bruegel=Bruegel|Hans Holbein=Holbein|Ghiberti=Lorenzo Ghiberti|Giotto|Fra Angelico|Masaccio|Ghirlandaio|Verrocchio|Perugino|Tintoretto|Veronese|Bellini|Correggio|Cellini=Benvenuto Cellini|Vasari=Giorgio Vasari|Petrarch|Boccaccio|Montaigne|Rabelais|Cervantes|Christopher Marlowe=Marlowe|Kepler=Johannes Kepler|Tycho Brahe|Vesalius=Andreas Vesalius|Paracelsus|Savonarola|Lucrezia Borgia|Cesare Borgia|Pope Julius II|Pope Leo X|Francis I|Charles V|Vasco da Gama|Magellan=Ferdinand Magellan|Amerigo Vespucci=Vespucci|Thomas Cromwell",
+        "Alberti=Leon Battista Alberti|Bramante|Palladio|Mantegna|Piero della Francesca|Uccello=Paolo Uccello|Filippo Lippi|Filippino Lippi|Giorgione|Parmigianino|Pontormo|Bronzino|Sofonisba Anguissola|Artemisia Gentileschi|Lucas Cranach|Grunewald|Rogier van der Weyden|Memling|Ficino=Marsilio Ficino|Pico della Mirandola|Castiglione|Ariosto|Tasso|Guicciardini|Aldus Manutius|Tartaglia|Cardano|Federico da Montefeltro|Ludovico Sforza|Beatrice d'Este|Catherine de' Medici|Caterina Sforza",
+        "Gentile da Fabriano|Pisanello|Luca della Robbia|Desiderio da Settignano|Antonello da Messina|Carpaccio|Luca Signorelli|Sodoma|Andrea del Sarto|Rosso Fiorentino|Giulio Romano|Lorenzo Lotto|Properzia de' Rossi|Lavinia Fontana|Michelozzo|Filarete|Sangallo|Laura Cereta|Poliziano|Bembo|Aretino|Luca Pacioli|Regiomontanus|Peurbach"
+      ]
+    },
+    {
+      "pack": "cul",
+      "d": 2,
+      "q": "Name a famous duo",
+      "pearl": "Bill and Ben",
+      "tiers": [
+        "Ant and Dec|Laurel and Hardy|Batman and Robin|Tom and Jerry|Romeo and Juliet|Simon and Garfunkel|Bonnie and Clyde|Sherlock Holmes and Watson=Holmes and Watson|Mario and Luigi|Wallace and Gromit",
+        "Morecambe and Wise|Thelma and Louise|Bert and Ernie",
+        "Daft Punk|The White Stripes|OutKast|The Everly Brothers|The Proclaimers|Hall and Oates|The Chemical Brothers|Pet Shop Boys|Eurythmics|Wham!=Wham|Sonny and Cher|The Carpenters|Ike and Tina|Fred and Ginger=Astaire and Rogers|Torvill and Dean|French and Saunders|Fry and Laurie|Mitchell and Webb|Reeves and Mortimer=Vic and Bob|Abbott and Costello|Penn and Teller|Siegfried and Roy|Cheech and Chong|Key and Peele|Jay and Silent Bob|Bill and Ted|Harold and Kumar|Rick and Morty|Ren and Stimpy|Beavis and Butt-Head|Pinky and the Brain|Phineas and Ferb|Timon and Pumbaa|Woody and Buzz|Shrek and Donkey|Frodo and Sam|Han Solo and Chewbacca=Han and Chewie|R2-D2 and C-3PO|Starsky and Hutch|Cagney and Lacey|Mulder and Scully|Jules and Vincent|Marx and Engels|Lewis and Clark|Watson and Crick|Wright brothers|Lennon and McCartney|Gilbert and Sullivan|Rodgers and Hammerstein|Ben and Jerry|Marks and Spencer|Procter and Gamble|Rolls and Royce|Hewlett and Packard|Jekyll and Hyde|Antony and Cleopatra|Adam and Eve|Romulus and Remus|Hansel and Gretel|Jack and Jill|Venus and Serena Williams=The Williams sisters",
+        "Gilbert and George|Flanders and Swann|Peters and Lee|Chas and Dave|Robson and Jerome|Zig and Zag|Dick and Dom|Mel and Sue|Richard and Judy|Hale and Pace|Cannon and Ball|Little and Large|Smith and Jones|Armstrong and Miller|Rosencrantz and Guildenstern|Tweedledum and Tweedledee|Statler and Waldorf|Bob and Doug McKenzie|Flight of the Conchords|Tenacious D|Air|Basement Jaxx|Groove Armada|Soft Cell|Erasure|Tears for Fears|Yazoo|The Ting Tings|Chase and Status|Lewis and Martin=Martin and Lewis",
+        "Burke and Hare|Leopold and Loeb|Castor and Pollux|Damon and Pythias|Heloise and Abelard|Tristan and Isolde|Troilus and Cressida|Pyramus and Thisbe|Orpheus and Eurydice|Gog and Magog|Bouvard and Pecuchet|Asterix and Obelix|Tintin and Snowy|Spy vs Spy|Itchy and Scratchy"
+      ]
+    },
+    {
+      "pack": "food",
+      "d": 2,
+      "q": "Name a type of street food",
+      "pearl": "Bunny chow",
+      "tiers": [
+        "Hot dog|Burger|Kebab|Tacos=Taco|Pizza|Chips=Fries|Hamburger|Pretzel",
+        "Churros|Crepes=Crepe|Falafel",
+        "Doner kebab|Shawarma|Gyros=Gyro|Souvlaki|Burrito|Quesadilla|Nachos|Elote|Tamales|Empanadas=Empanada|Arepas=Arepa|Corn dog|Fish and chips|Sausage roll|Pasty|Bratwurst|Currywurst|Waffles|Doughnuts=Donuts|Candy floss=Cotton candy|Toffee apple|Roasted chestnuts|Ice cream|Satay|Spring rolls|Dumplings|Bao=Bao buns|Bubble tea|Pad Thai|Banh mi|Pho|Samosa|Pakora|Bhaji=Onion bhaji|Pani puri=Golgappa|Bhel puri|Vada pav|Dosa|Kathi roll|Jerk chicken|Patty=Jamaican patty|Fried chicken|Chicken wings|Noodles|Dim sum|Takoyaki|Yakitori|Gozleme|Lahmacun|Simit|Halloumi fries|Loaded fries|Poutine|Fish tacos|Lobster roll|Pulled pork",
+        "Pav bhaji|Chaat|Aloo tikki|Jalebi|Egg roll|Jianbing|Roujiamo|Stinky tofu|Bubble waffle=Egg waffle|Tteokbokki|Hotteok|Odeng=Fish cake|Okonomiyaki|Taiyaki|Dango|Kaya toast|Roti canai|Murtabak|Laksa|Char kway teow|Som tam|Moo ping|Khanom krok|Isaw|Balut|Kwek-kwek|Martabak|Tostada|Gorditas|Sopes|Tlayuda|Pupusa|Choripan|Anticuchos|Acaraje|Coxinha|Pastel|Bocadillo|Panzerotti|Arancini|Suppli|Panelle|Lampredotto|Langos|Trdelnik|Kumpir|Midye dolma|Balik ekmek|Koshari|Ful medames|Sabich|Manakish|Suya|Puff-puff|Chakalaka|Boerewors roll|Vetkoek",
+        "Kottu roti|Hoppers|Momos|Sel roti|Chapli kebab|Bun kebab|Nihari|Doubles|Bake and shark|Pholourie|Aloo pie|Snow cone|Shave ice|Malasadas|Spam musubi|Frito pie|Walking taco|Pane ca meusa|Stigghiola|Smalahove|Sisig|Kikiam|Zongzi|Tanghulu|Baozi|Cong you bing|Youtiao|Lok lok|Ramly burger|Apam balik"
+      ]
+    },
+    {
+      "pack": "sport",
+      "d": 2,
+      "q": "Name a famous tennis player",
+      "pearl": "Fred Perry",
+      "tiers": [
+        "Roger Federer=Federer|Rafael Nadal=Rafa Nadal=Nadal|Novak Djokovic=Djokovic|Serena Williams|Andy Murray=Murray|Venus Williams|Emma Raducanu=Raducanu",
+        "John McEnroe=McEnroe|Bjorn Borg=Borg|Martina Navratilova=Navratilova",
+        "Carlos Alcaraz=Alcaraz|Jannik Sinner=Sinner|Daniil Medvedev=Medvedev|Alexander Zverev=Zverev|Stefanos Tsitsipas=Tsitsipas|Dominic Thiem|Stan Wawrinka=Wawrinka|Juan Martin del Potro=Del Potro|Nick Kyrgios=Kyrgios|Pete Sampras=Sampras|Andre Agassi=Agassi|Boris Becker=Becker|Stefan Edberg|Ivan Lendl|Jimmy Connors|Arthur Ashe|Rod Laver|Lleyton Hewitt|Pat Cash|Goran Ivanisevic|Tim Henman=Henman|Greg Rusedski|Cameron Norrie|Jack Draper|Steffi Graf=Graf|Chris Evert|Billie Jean King|Monica Seles|Martina Hingis|Maria Sharapova=Sharapova|Kim Clijsters|Justine Henin|Lindsay Davenport|Jennifer Capriati|Naomi Osaka|Coco Gauff=Gauff|Iga Swiatek=Swiatek|Aryna Sabalenka=Sabalenka|Ash Barty=Ashleigh Barty|Simona Halep|Petra Kvitova|Angelique Kerber|Caroline Wozniacki|Elena Rybakina|Ons Jabeur|Victoria Azarenka|Li Na|Virginia Wade|Johanna Konta|Katie Boulter|Heather Watson|Laura Robson",
+        "Ilie Nastase|Guillermo Vilas|Mats Wilander|Michael Chang|Jim Courier|Yevgeny Kafelnikov|Marat Safin|Gustavo Kuerten|Carlos Moya|Juan Carlos Ferrero|Andy Roddick|Marcos Baghdatis|Gael Monfils|Jo-Wilfried Tsonga|Richard Gasquet|David Ferrer|Kei Nishikori|Milos Raonic|Marin Cilic|Casper Ruud|Holger Rune|Taylor Fritz|Frances Tiafoe|Ben Shelton|Margaret Court|Evonne Goolagong|Tracy Austin|Gabriela Sabatini|Arantxa Sanchez Vicario|Conchita Martinez|Mary Pierce|Amelie Mauresmo|Ana Ivanovic|Jelena Jankovic|Dinara Safina|Garbine Muguruza|Sloane Stephens|Bianca Andreescu|Jasmine Paolini|Mirra Andreeva|Ann Jones|Sue Barker|Jo Durie|Bob and Mike Bryan=Bryan brothers|Leander Paes|Mahesh Bhupathi|Todd Woodbridge|Mark Woodforde|Jamie Murray",
+        "Bill Tilden|Rene Lacoste|Henri Cochet|Jean Borotra|Don Budge|Ken Rosewall|Lew Hoad|Roy Emerson|John Newcombe|Tony Roche|Pancho Gonzales|Bunny Austin|Suzanne Lenglen|Helen Wills Moody|Maureen Connolly|Althea Gibson|Maria Bueno|Lottie Dod|Charlotte Cooper|Dorothea Lambert Chambers|Kitty Godfree|Angela Mortimer|Christine Truman|Roger Taylor|Mark Cox|Buster Mottram|Jeremy Bates"
+      ]
+    }
+  ]
+}
