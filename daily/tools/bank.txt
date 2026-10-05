@@ -2,6 +2,7 @@
 cul	1	Name a Beatles song
 cul	1	Name a Christmas song or carol
 cul	1	Name a Disney animated film
+cul	1	Name a Disney or Pixar animated film
 cul	1	Name a Disney villain
 cul	1	Name a Friends character
 cul	1	Name a Harry Potter character
@@ -20,7 +21,7 @@ cul	1	Name a children's TV show
 cul	1	Name a children's book
 cul	1	Name a classical composer
 cul	1	Name a dance
-cul	1	Name a fairy tale
+cul	1	Name a fairy tale or fable
 cul	1	Name a famous comedian
 cul	1	Name a famous painting
 cul	1	Name a famous singer
@@ -29,6 +30,7 @@ cul	1	Name a fictional detective
 cul	1	Name a language
 cul	1	Name a music genre
 cul	1	Name a musical instrument
+cul	1	Name a novel
 cul	1	Name a nursery rhyme
 cul	1	Name a painter
 cul	1	Name a poet
@@ -53,6 +55,7 @@ cul	2	Name a philosopher
 cul	2	Name a spell from Harry Potter
 cul	2	Name an opera
 cul	3	Name a novel by Charles Dickens
+cul	3	Name a novel by Jane Austen
 cul	3	Name a sculptor
 cul	3	Name an art movement
 food	1	Name a Christmas food
@@ -75,7 +78,7 @@ food	1	Name a pizza topping
 food	1	Name a potato dish
 food	1	Name a rice dish
 food	1	Name a sauce or condiment
-food	1	Name a spirit (vodka, gin...)
+food	1	Name a spirit or liqueur
 food	1	Name a supermarket chain
 food	1	Name a traditional British dish
 food	1	Name a type of bread
@@ -100,6 +103,7 @@ food	2	Name a coffee drink
 food	2	Name a cooking method
 food	2	Name a cooking oil or fat
 food	2	Name a fish you'd eat
+food	2	Name a grain or cereal
 food	2	Name a nut
 food	2	Name a pasta shape
 food	2	Name a salad
@@ -306,6 +310,7 @@ nat	2	Name an amphibian
 nat	2	Name an animal native to Asia
 nat	2	Name an animal native to South America
 nat	2	Name an animal that hibernates
+nat	2	Name an arachnid
 nat	2	Name an extinct animal
 nat	3	Name a mushroom or fungus
 sci	1	Name a TV or video streaming service
@@ -313,8 +318,10 @@ sci	1	Name a building material
 sci	1	Name a car model
 sci	1	Name a chemical element
 sci	1	Name a computer or phone operating system
+sci	1	Name a disease
 sci	1	Name a famous robot (real or fictional)
 sci	1	Name a gas
+sci	1	Name a geometric shape
 sci	1	Name a key on a computer keyboard
 sci	1	Name a medicine you can buy at a pharmacy
 sci	1	Name a part of a car
@@ -328,6 +335,7 @@ sci	1	Name a social media platform
 sci	1	Name a tech company
 sci	1	Name a type of storm or extreme weather
 sci	1	Name a unit of measurement
+sci	1	Name a weather phenomenon
 sci	1	Name a website
 sci	1	Name an app you'd find on a phone
 sci	1	Name an infectious disease
@@ -356,6 +364,7 @@ sci	2	Name a part of the brain
 sci	2	Name a part of the eye
 sci	2	Name a physicist
 sci	2	Name a piece of lab equipment
+sci	2	Name a scientific effect (the ___ effect)
 sci	2	Name a spacecraft or space mission
 sci	2	Name a subatomic particle
 sci	2	Name a type of doctor or medical specialist
@@ -363,6 +372,7 @@ sci	2	Name a type of energy
 sci	2	Name a type of rock
 sci	2	Name a vitamin or mineral your body needs
 sci	2	Name an acid
+sci	2	Name an aircraft
 sci	2	Name an alloy
 sci	2	Name an astronaut
 sci	3	Name a chemist
@@ -409,6 +419,7 @@ sport	2	Name a Wimbledon singles champion
 sport	2	Name a baseball term
 sport	2	Name a basketball term
 sport	2	Name a boxer
+sport	2	Name a chess player
 sport	2	Name a chess term
 sport	2	Name a cricket term
 sport	2	Name a cycling term
@@ -469,8 +480,12 @@ word	2	Name a British slang word
 word	2	Name a Latin phrase used in English
 word	2	Name a body part with exactly three letters
 word	2	Name a collective noun for animals
+word	2	Name a figure of speech or rhetorical device
+word	2	Name a form of poem
 word	2	Name a letter of the Greek alphabet
+word	2	Name a nautical term
 word	2	Name a palindrome
+word	2	Name a palindromic word
 word	2	Name a phobia
 word	2	Name a punctuation mark
 word	2	Name a shade of blue
@@ -498,4 +513,5 @@ word	2	Name an acronym
 word	3	Name a portmanteau word
 word	3	Name a word with no A, E, I, O or U
 word	3	Name an English word borrowed from Arabic
+word	3	Name an English word borrowed from Chinese
 word	3	Name an English word borrowed from Hindi or Urdu
