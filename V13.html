@@ -986,26 +986,6 @@ body { overscroll-behavior: none; }
 html.bf-on, html.bf-on body { height: 100%; overscroll-behavior: none; touch-action: none; }
 .bf { touch-action: manipulation; }
 
-/* where this dive sits among divers: a slightly left-skewed curve on the end screen */
-.curve { width: 100%; margin-top: 14px; padding-top: 16px; border-top: 1px solid var(--line); display: grid; gap: 4px; }
-.curve-head { display: flex; align-items: baseline; justify-content: center; gap: 8px; }
-.curve-head b { font: 900 clamp(2.4rem, 11vw, 3.4rem)/1 var(--display-solid); color: var(--lure); text-shadow: 0 0 20px rgba(227,164,71,.3); font-variant-numeric: tabular-nums; }
-.curve-head span { color: var(--ink-dim); font-weight: 600; letter-spacing: .06em; }
-.end-hero .curve-sub { margin: 0 auto; color: var(--ink-dim); }
-.curve svg { width: 100%; max-width: 520px; height: auto; display: block; margin: 6px auto 0; overflow: visible; }
-.cv-all { fill: rgba(196,186,166,.08); }
-.cv-you { fill: rgba(227,164,71,.3); }
-.cv-line { fill: none; stroke: rgba(196,186,166,.55); stroke-width: 1.5; }
-.cv-base { stroke: var(--line-strong); stroke-width: 1; }
-.cv-mark { stroke: var(--lure); stroke-width: 2; }
-.cv-dot { fill: var(--lure); filter: drop-shadow(0 0 6px rgba(227,164,71,.8)); }
-.cv-you-label { fill: var(--lure); font: 700 11px var(--body); letter-spacing: .08em; text-anchor: middle; }
-.cv-clip { transform-origin: 0 0; animation: cvgrow 1.4s var(--ease) .3s both; }
-@keyframes cvgrow { from { transform: scaleX(0); } }
-.cv-mark, .cv-dot, .cv-you-label { animation: cvin .5s ease 1.5s both; }
-@keyframes cvin { from { opacity: 0; } }
-.curve-axis { display: flex; justify-content: space-between; width: 100%; max-width: 520px; margin: 0 auto; font-size: 12px; color: var(--ink-faint); letter-spacing: .04em; }
-
 /* ================= Opening sequence ================= */
 .intro { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; overflow: hidden; color: var(--ink);
   font-family: var(--body); cursor: default; }
@@ -6937,66 +6917,6 @@ Reply with only JSON like {"valid": true, "tier": 4, "name": "Correct Spelling",
   }
 
   // ---------- end ----------
-  // ---------- where this dive sits among divers ----------
-  // Depth per prompt (per prompt-second in Trawl, where every answer in the net scores) placed on a
-  // slightly left-skewed curve: most dives bunch a little above the middle, with a longer tail of
-  // short ones. The curve is a skew-normal on the log of (depth rate / typical depth rate).
-  const SKEW = { a: -2.5, w: 0.85, xi: 0.5679 };
-  const RATE_MEDIAN = { classic: 11, endless: 11, daily: 11, trawl: 1.3 };
-  function normCdf(x) {
-    const z = Math.abs(x) / Math.SQRT2, t = 1 / (1 + 0.3275911 * z);
-    const e = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-z * z);
-    return x >= 0 ? 0.5 * (1 + e) : 0.5 * (1 - e);
-  }
-  const snPdf = (v) => { const z = (v - SKEW.xi) / SKEW.w; return 2 * Math.exp(-z * z / 2) / Math.sqrt(2 * Math.PI) * normCdf(SKEW.a * z) / SKEW.w; };
-  let snTable = null;
-  function placeOf(rate, mode) {
-    const v = rate > 0 ? Math.log(rate / (RATE_MEDIAN[mode] || 11)) : -Infinity;
-    if (!snTable) { snTable = []; let c = 0; for (let i = 0; i <= 800; i++) { c += snPdf(-5 + i * 0.01 + 0.005) * 0.01; snTable.push(c); } }
-    const i = Math.floor((v + 5) / 0.01);
-    const p = !isFinite(v) || i < 0 ? 0 : i >= snTable.length ? 1 : snTable[i];
-    return { v, pct: Math.max(1, Math.min(99, Math.floor(p * 100))) };
-  }
-  const ordinal = (n) => n + (n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] || "th");
-  function curveHTML(rate, mode, who) {
-    if (!(rate >= 0) || !isFinite(rate)) return "";
-    const { v, pct } = placeOf(rate, mode);
-    const X0 = -2.4, X1 = 1.3, W = 320, H = 112, B = 100, TOP = 24;
-    const xs = (x) => ((x - X0) / (X1 - X0)) * W;
-    let ymax = 0; const pts = [];
-    for (let i = 0; i <= 140; i++) { const x = X0 + ((X1 - X0) * i) / 140, y = snPdf(x); ymax = Math.max(ymax, y); pts.push([x, y]); }
-    const ys = (y) => B - (y / ymax) * (B - TOP);
-    const line = pts.map(([x, y], i) => (i ? "L" : "M") + xs(x).toFixed(1) + " " + ys(y).toFixed(1)).join("");
-    const area = line + `L${W} ${B}L0 ${B}Z`;
-    const pv = Math.max(X0, Math.min(X1, isFinite(v) ? v : X0)), px = xs(pv), py = ys(snPdf(pv)) - 6;
-    const lx = Math.max(14, Math.min(W - 14, px));
-    return `<div class="curve" data-pct="${pct}">
-        <div class="curve-head"><b id="pctNum">${ordinal(pct)}</b><span>percentile</span></div>
-        <p class="curve-sub">You went deeper than ${pct}% of divers ${who}.</p>
-        <svg viewBox="0 0 ${W} ${H}" aria-hidden="true">
-          <defs><clipPath id="cvLeft"><rect class="cv-clip" x="0" y="0" width="${px.toFixed(1)}" height="${H}"/></clipPath></defs>
-          <path d="${area}" class="cv-all"/>
-          <path d="${area}" class="cv-you" clip-path="url(#cvLeft)"/>
-          <path d="${line}" class="cv-line"/>
-          <line x1="0" y1="${B}" x2="${W}" y2="${B}" class="cv-base"/>
-          <line class="cv-mark" x1="${px.toFixed(1)}" x2="${px.toFixed(1)}" y1="${py.toFixed(1)}" y2="${B}"/>
-          <circle class="cv-dot" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="4"/>
-          <text class="cv-you-label" x="${lx.toFixed(1)}" y="${(py - 10).toFixed(1)}">YOU</text>
-        </svg>
-        <div class="curve-axis"><span>Shallower</span><span>Deeper</span></div>
-      </div>`;
-  }
-  function animateCurve() {
-    const box = document.querySelector("#end .curve"), el = document.getElementById("pctNum");
-    if (!box || !el || O.reduced) return;
-    const to = +box.dataset.pct, t0 = performance.now() + 300, dur = 1300;
-    const step = (now) => {
-      const k = Math.max(0, Math.min(1, (now - t0) / dur));
-      el.textContent = ordinal(Math.max(1, Math.round(to * (1 - Math.pow(1 - k, 3)))));
-      if (k < 1 && el.isConnected) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }
   function endDive(quit) {
     clearTimer();
     Game.over = true;
@@ -7057,7 +6977,6 @@ Reply with only JSON like {"valid": true, "tier": 4, "name": "Correct Spelling",
         <div class="zone">${esc(zone.name)}</div>
         <p>${esc(lead + lms)}</p>
         <div class="strip">${strip}</div>
-        ${g.results.length ? curveHTML(trawl ? g.depth / 10 / (g.results.length * (g.secs || 30)) : g.depth / 10 / (g.mode === "classic" && !quit ? g.prompts.length : g.results.length), g.mode, trawl ? "in trawls" : g.mode === "endless" ? "on endless dives" : "on classic dives") : ""}
       </div>
       <div class="end-actions">
         <button class="btn primary" type="button" id="again">${ICON("again")}${trawl ? "Trawl again" : "Dive again"}</button>
@@ -7067,7 +6986,6 @@ Reply with only JSON like {"valid": true, "tier": 4, "name": "Correct Spelling",
       <div class="log">${logHTML(g.results)}</div>`;
     show("end");
     countUp($("#endNum"), g.depth);
-    animateCurve();
     $("#again").onclick = () => { SND.init(); startDive(); };
     $("#toHome").onclick = () => showHome();
     $("#share").onclick = () => copyShare(g);
@@ -7433,7 +7351,6 @@ Reply with only JSON like {"valid": true, "tier": 4, "name": "Correct Spelling",
           <div><b>${isToday ? dailyStreakNow() : "–"}</b><span>Day streak</span></div>
         </div>
         ${strip ? `<div class="strip">${strip}</div>` : ""}
-        ${rec.total ? curveHTML(rec.depth / 10 / rec.total, "daily", isToday ? "on today's daily dive" : "on this daily dive") : ""}
         ${extra ? `<p>${esc(extra)}</p>` : ""}
         ${isToday ? `<p class="dnext">That's today's dive done. The next one arrives in <b>${untilTomorrow()}</b>.</p>` : ""}
       </div>
@@ -7446,7 +7363,6 @@ Reply with only JSON like {"valid": true, "tier": 4, "name": "Correct Spelling",
     show("end");
     if (!opts.fresh) { O.setGaugeMax(rec.depth > 11000 ? 170000 : 11000); O.setDepth(rec.depth, false, 1400); }
     countUp($("#endNum"), rec.depth);
-    animateCurve();
     $("#dShare").onclick = () => copyText(dailyShareText(key));
     $("#dFree").onclick = () => { SND.init(); startDive(); };
     $("#toHome").onclick = () => showHome();
