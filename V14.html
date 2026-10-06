@@ -6942,7 +6942,7 @@ Reply with only JSON like {"valid": true, "tier": 4, "name": "Correct Spelling",
   // slightly left-skewed curve: most dives bunch a little above the middle, with a longer tail of
   // short ones. The curve is a skew-normal on the log of (depth rate / typical depth rate).
   const SKEW = { a: -2.5, w: 0.85, xi: 0.5679 };
-  const RATE_MEDIAN = { classic: 16, endless: 16, daily: 16, trawl: 1.9 };
+  const RATE_MEDIAN = { classic: 11, endless: 11, daily: 11, trawl: 1.3 };
   function normCdf(x) {
     const z = Math.abs(x) / Math.SQRT2, t = 1 / (1 + 0.3275911 * z);
     const e = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-z * z);
